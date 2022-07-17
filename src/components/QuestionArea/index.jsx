@@ -1,15 +1,22 @@
 import React from 'react'
 
-export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, Date}) {
+export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, Date, isComment}) {
   return (
     <>
-                <div className='w-4/5 bg-white min-h-[15rem] mx-auto p-5'>
-                <div className='min-h-[10rem]'>
+                <div className={isComment ? 'w-4/5 bg-white min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10' : 'w-4/5 bg-white min-h-[15rem] mx-auto p-5'}>
+                <div className='min-h-[10rem]' >
                     <h1 className='font-bold text-3xl mb-5'>{Question}</h1>
+
+
+                    {isComment ? 
+                    <h1 className='font-bold text-2xl mb-5'>{Desc}</h1>
+                    : 
                     <p>{Desc}</p>
+                    }
+
                 </div>
 
-                <div className='w-full h-[3rem] flex itmes-center justify-between '>
+                <div className='w-full h-[3rem] flex itmes-center justify-between flex-col sm:flex-row'>
                     <div className='h-full min-w-[15rem] bg-white flex items-center	 justify-center'>
                         <img
                             className="w-10 h-10 rounded-full mr-5"
