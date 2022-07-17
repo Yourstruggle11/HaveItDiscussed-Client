@@ -2,6 +2,7 @@ import React from "react";
 import { Popover, Transition, Menu } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 export default function Navbar() {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -23,10 +24,12 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
               {/* Heading / Logo */}
-              <div className="flex justify-start lg:w-0 lg:flex-1">
+              <div className="flex justify-start lg:w-0 lg:flex-1 h-[40px]">
                 <div className="cursor-pointer">
                   <span className="sr-only">Logo</span>
-                  <Link to="/">HaveItDiscussed</Link>
+                  <Link to="/">
+                    <img src={logo} alt="logo" className="w-[5rem] h-[3.5rem] "/>
+                  </Link>
                 </div>
               </div>
               {/* Menu Icons show from tab view */}
@@ -132,7 +135,7 @@ export default function Navbar() {
               <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5">
                   <div className="flex items-center justify-between">
-                    <Link to="/">HaveItDiscussed</Link>
+                  <img src={logo} alt="logo" className="w-[5rem] h-[5rem]"/>
                     <div className="-mr-2">
                       <Menu.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span className="sr-only">Close menu</span>
