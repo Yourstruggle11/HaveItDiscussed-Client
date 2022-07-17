@@ -5,13 +5,17 @@ import {
     Route,
   } from "react-router-dom";
 import Home from './pages/Home';
+import Navbar from "./components/Navbar";
 
 export default function Navigator() {
   return (
-    <BrowserRouter>
-    <Routes>
-        <Route path="/" element={<Home />} />
-    </Routes>
-  </BrowserRouter>
+    <>
+        <BrowserRouter>
+                <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+        </BrowserRouter>
+    </>
   )
 }
