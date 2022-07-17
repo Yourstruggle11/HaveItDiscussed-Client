@@ -87,9 +87,11 @@ export default function Navbar() {
                     </div>
                     <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
+                      <Link to="/question/new">
                       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Ask The Community
                       </button>
+                      </Link>
                     </div>
                   </React.Fragment>
                 ) : (
@@ -187,9 +189,11 @@ export default function Navbar() {
                     </div>
                     <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer ">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
+                      <Link to="/question/new">
                       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Ask The Community
                       </button>
+                      </Link>
                     </div>
                   </React.Fragment>
                 ) : (

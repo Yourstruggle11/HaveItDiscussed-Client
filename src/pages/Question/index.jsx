@@ -16,7 +16,11 @@ export default function Question() {
                 I would love to know how you would solve this question.`}
                 isComment={false}
             />
-            <Editor body={body} setBody={setBody}  />
+            <Editor
+             body={body}
+             setBody={setBody}
+             placeholder="Write Your Comment Here..."
+               />
             <div className='w-4/5 h-5 m-auto my-10'>
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Post Comment

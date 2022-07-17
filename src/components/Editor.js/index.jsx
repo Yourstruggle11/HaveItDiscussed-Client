@@ -3,7 +3,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./style.css";
 
-export const Editor = ({body, setBody}) => {
+export const Editor = ({body, setBody,placeholder}) => {
   return (
     <div className="text-editor">
       {/* <EditorToolbar /> */}
@@ -11,7 +11,7 @@ export const Editor = ({body, setBody}) => {
         theme="snow"
         value={body}
         onChange={(e) => setBody(e)}
-        placeholder={"Write Your Comment Here..."}
+        placeholder={placeholder}
       />
     </div>
   );

@@ -12,9 +12,11 @@ export default function QuestionCard({Likes, TagArray, Question, Desc, PostedBy,
                <h1 className="mx-2 font-extrabold">{Likes}</h1>
 
                {TagArray.map((tag, index) => {
+                return (
                     <span key={index} className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-slate-600 bg-slate-200 uppercase last:mr-0 mr-1">
                     {tag}
                     </span>
+                )
                  })}
               </p>
               <div className="text-gray-900 font-bold text-xl mb-2">
