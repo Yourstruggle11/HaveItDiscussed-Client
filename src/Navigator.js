@@ -15,8 +15,6 @@ export default function Navigator() {
                 <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
-            </Routes>
-            <Routes>
                 <Route path="/question" element={<Question />} />
             </Routes>
         </BrowserRouter>

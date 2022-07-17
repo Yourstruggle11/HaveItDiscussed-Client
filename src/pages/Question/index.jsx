@@ -1,6 +1,8 @@
 import React from 'react'
+import Editor from '../../components/Editor.js'
 
 export default function Question() {
+    const [body, setBody] = React.useState('')
   return (
     <>
         <div className='w-full h-[50rem] bg-[#f9fafb] pt-[2rem]'>
@@ -9,13 +11,13 @@ export default function Question() {
                     <h1 className='font-bold text-3xl mb-5'>This is a dummy question</h1>
                     <p>For the #SystemDesignWeekend, we have an interesting problem - Design Amazon Web Services.
 
-I would love to know how you would solve this question.</p>
+                        I would love to know how you would solve this question.</p>
                 </div>
 
                 <div className='w-full h-[3rem] flex itmes-center justify-between '>
                     <div className='h-full min-w-[15rem] bg-white flex items-center	 justify-center'>
                         <img
-                            class="w-10 h-10 rounded-full mr-5"
+                            className="w-10 h-10 rounded-full mr-5"
                             src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                             alt="Rounded avatar"
                         />
@@ -36,6 +38,16 @@ I would love to know how you would solve this question.</p>
                         12-5-2020
                     </div>
                 </div>
+            </div>
+
+
+
+
+            <Editor body={body} setBody={setBody}  />
+            <div className='w-4/5 h-5 m-auto mt-5'>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Post Comment
+                </button>
             </div>
         </div>
     </>

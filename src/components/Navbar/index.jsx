@@ -80,14 +80,14 @@ export default function Navbar() {
                     <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
                       <img
-                        class="w-10 h-10 rounded-full"
+                        className="w-10 h-10 rounded-full"
                         src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                         alt="Rounded avatar"
                       />
                     </div>
                     <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
-                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Ask The Community
                       </button>
                     </div>
@@ -179,7 +179,7 @@ export default function Navbar() {
                     <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
                       <img
-                        class="w-10 h-10 rounded-full"
+                        className="w-10 h-10 rounded-full"
                         src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                         alt="Rounded avatar"
                       />
@@ -187,7 +187,7 @@ export default function Navbar() {
                     </div>
                     <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer ">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
-                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Ask The Community
                       </button>
                     </div>
