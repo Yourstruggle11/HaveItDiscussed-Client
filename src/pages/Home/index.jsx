@@ -5,7 +5,7 @@ import QuestionCard from "../../components/QuestionCard";
 export default function Home() {
   return (
     <>
-      <div className="relative bg-[#f9fafb] dark:bg-MB overflow-hidden p-10 h-[100vh]">
+      <div className="relative dark:bg-[red1]bg-[#f9fafb] dark:bg-MB overflow-hidden p-10 h-[100vh]">
       <div className="max-w-sm w-full lg:max-w-full lg:flex items-center justify-center bg-[#f9fafb]">
         <Link to='/question' >            
             <QuestionCard
