@@ -24,7 +24,7 @@ export default function PostQuestion() {
       <div className="w-full min-h-[50rem] py-10 bg-[#f9fafb] pt-[2rem]">
         <div className="w-11/12 bg-white min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10">
           <div className="flex justify-center">
-            <div className="mb-3 md:w-full">
+            <div className="mb-3 w-full">
               <input
                 type="text"
                 className="
@@ -61,7 +61,7 @@ export default function PostQuestion() {
           </div>
 
           <div className="flex justify-center mt-10">
-            <div className="mb-3 md:w-full">
+            <div className="mb-3 w-full">
               <input
                 onKeyPress={addTag}
                 onChange={(e) => setKeywordInput(e.target.value)}

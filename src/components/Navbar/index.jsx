@@ -135,7 +135,9 @@ export default function Navbar() {
               <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5">
                   <div className="flex items-center justify-between">
-                  <img src={logo} alt="logo" className="w-[5rem] h-[5rem]"/>
+                    <Link to='/'>
+                      <img src={logo} alt="logo" className="w-[5rem] h-[5rem]"/>
+                    </Link>
                     <div className="-mr-2">
                       <Menu.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span className="sr-only">Close menu</span>
