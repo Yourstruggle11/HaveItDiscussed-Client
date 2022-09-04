@@ -8,10 +8,10 @@ import {initializeApp, getApps} from 'firebase/app'
 import { getAuth, GoogleAuthProvider, signInWithPopup  } from "firebase/auth"
 
 // redux
-// import { useDispatch } from 'react-redux'
-// import {
-//   signInSocialUser
-// } from '../redux/actions/userAction'
+import { useDispatch } from 'react-redux'
+import {
+  signInSocialUser
+} from '../redux/actions/userAction'
 
 // we create a React Context, for this to be accessible
 // from a component later
@@ -25,7 +25,7 @@ export default ({ children }) => {
     auth: null,
   }
 
-//   const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const API = process.env.REACT_APP_NODE_API
 
   // check if firebase app has been initialized previously
@@ -53,7 +53,7 @@ export default ({ children }) => {
       .then(async () => {
         // This gives you a IdToken. Then pass it to backend to store to db.
         const idToken = await firebase.auth.currentUser.getIdToken();
-        // dispatch(signInSocialUser(idToken, API))
+        dispatch(signInSocialUser(idToken, API))
     })
       .catch((error) => {
         // Handle Errors here.
