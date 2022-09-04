@@ -3,9 +3,13 @@ import { Popover, Transition, Menu } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { useSelector,useDispatch } from "react-redux";
+import { logoutUser } from "../../redux/actions/userAction";
 
 export default function Navbar() {
   const [searchTerm, setSearchTerm] = React.useState("");
+
+  const {userInfo:data} = useSelector((state) => state.userSignin);
 
   // added debounce to prevent the search term from being updated too often
   const search = (value) => {
@@ -15,7 +19,8 @@ export default function Navbar() {
     setSearchTerm(value);
   };
 
-  const data = true;
+  const dispatch = useDispatch();
+
 
   return (
     <>
@@ -75,7 +80,11 @@ export default function Navbar() {
 
                 {data ? (
                   <React.Fragment>
-                    <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
+                    <div
+                      onClick={() =>{
+                        dispatch(logoutUser())
+                      }} 
+                      className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
                       Logout
                     </div>
@@ -84,7 +93,7 @@ export default function Navbar() {
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
                       <img
                         className="w-10 h-10 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                        src={data ? data.profilePic : "https://flowbite.com/docs/images/people/profile-picture-5.jpg"}
                         alt="Rounded avatar"
                       />
                     </div>
@@ -99,10 +108,12 @@ export default function Navbar() {
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
+                  <Link to="/login">
                     <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
                       Login
                     </div>
+                  </Link>
                   </React.Fragment>
                 )}
 
@@ -178,7 +189,11 @@ export default function Navbar() {
                   <div className={!data ? "grid items-center" : "flex flex-col justify-items-center items-center"}>
                   {data ? (
                   <React.Fragment>
-                    <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5">
+                    <div
+                    onClick={() =>{
+                      dispatch(logoutUser())
+                    }}
+                    className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
                       Logout
                     </div>
@@ -187,7 +202,7 @@ export default function Navbar() {
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
                       <img
                         className="w-10 h-10 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                        src={data ? data.profilePic : "https://flowbite.com/docs/images/people/profile-picture-5.jpg"}
                         alt="Rounded avatar"
                       />
 
@@ -203,10 +218,12 @@ export default function Navbar() {
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
+                  <Link to="/login">
                     <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
                       Login
                     </div>
+                  </Link>  
                   </React.Fragment>
                 )}
                   </div>
