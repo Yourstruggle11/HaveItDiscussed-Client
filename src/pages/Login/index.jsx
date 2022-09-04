@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FirebaseContext } from '../../firebase/firebase'
 
 export default function Login() {
+    const { api } = useContext(FirebaseContext)
+
+          /* -----------------Google Authentication------------- */
+  const googleAuth = async () => {
+    // setIsLoading(true)
+    const errMsg = await api.googleSignIn()
+    if (errMsg) {
+      alert(errMsg)
+    } else {
+        alert("login success")
+    //   notify()
+    }
+    // setIsLoading(false)
+}
   return (
     <>
         <div className="bg-blue-400 h-screen w-screen overflow-hidden">
@@ -12,7 +27,8 @@ export default function Login() {
                     <div className="w-full mt-4">
                         <div className="form-horizontal w-3/4 mx-auto" method="POST" action="#">
                             <div className="flex flex-col mt-8">
-                                <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded">
+                                <button onClick={googleAuth}
+                                type="submit" className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded">
                                     Login With Google
                                 </button>
                             </div>
