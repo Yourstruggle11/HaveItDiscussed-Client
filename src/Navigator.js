@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Question from './pages/Question';
 import PostQuestion from './pages/PostQuestion';
 import Login from './pages/Login';
+import { UserProtection } from './Layout/RouteProtection';
 
 export default function Navigator() {
   return (
@@ -19,7 +20,12 @@ export default function Navigator() {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/question" element={<Question />} />
-                <Route path="/question/new" element={<PostQuestion />} />
+                <Route path="/question/new" element={
+                <UserProtection>
+                  <PostQuestion /> 
+                </UserProtection>
+                }
+                />
             </Routes>
         </BrowserRouter>
     </>

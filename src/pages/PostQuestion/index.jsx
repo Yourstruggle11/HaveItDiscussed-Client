@@ -86,7 +86,7 @@ export default function PostQuestion() {
                 id="exampleFormControlInput1"
                 placeholder="Add some related keywords..."
               />
-              <p class="text-yellow-900 text-xs italic">
+              <p className="text-yellow-900 text-xs italic">
                 To remove any keyword, click on them!.
               </p>
             </div>

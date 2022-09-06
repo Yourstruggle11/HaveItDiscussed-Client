@@ -5,9 +5,9 @@ export default function QuestionCard({Likes, TagArray, Question, Desc, PostedBy,
     <>
               <div className="shadow-md cursor-pointer min-w-[5rem] md:min-w-[50rem] border-1 border border-gray-400  lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
             <div className="mb-8">
-              <p className="text-sm text-gray-600 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path strokeLinecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              <span className="text-sm text-gray-600 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                </svg>
                <h1 className="mx-2 font-extrabold">{Likes}</h1>
 
@@ -18,7 +18,7 @@ export default function QuestionCard({Likes, TagArray, Question, Desc, PostedBy,
                     </span>
                 )
                  })}
-              </p>
+              </span>
               <div className="text-gray-900 font-bold text-xl mb-2">
                 {Question}
               </div>
