@@ -2,7 +2,7 @@ import {
     GET_ALL_QUESTIONS_REQUEST,
     GET_ALL_QUESTIONS_SUCCESS,
     GET_ALL_QUESTIONS_FAILED,
-  } from '../constants/questionConstant'
+  } from '../constants/questionConstants'
 
 
 

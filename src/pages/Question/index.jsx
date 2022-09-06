@@ -1,9 +1,13 @@
 import React from 'react'
 import Editor from '../../components/Editor.js'
 import QuestionArea from '../../components/QuestionArea/index.jsx'
+import {QuestionLogic} from "./Question.logic"
 
 export default function Question() {
-    const [body, setBody] = React.useState('')
+  const {
+    body,
+    setBody,
+  } = QuestionLogic()
   return (
     <>
         <div className='w-full min-h-[50rem] py-10 bg-[#f9fafb] pt-[2rem]'>

@@ -1,22 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import QuestionCard from "../../components/QuestionCard";
+import {HomeLogic} from "./Home.logic"
 
 export default function Home() {
+  const {
+    data
+  } = HomeLogic()
   return (
     <>
       <div className="relative dark:bg-[red1]bg-[#f9fafb] dark:bg-MB overflow-hidden p-10 h-[100vh]">
-      <div className="max-w-sm w-full lg:max-w-full lg:flex items-center justify-center bg-[#f9fafb]">
-        <Link to='/question' >            
+      <div className="max-w-sm w-full lg:max-w-full lg:flex items-center flex-col justify-center bg-[#f9fafb]">
+        {data && data.questions.map((item,index) => {
+          return(
+            <Link to={`/question/${item.questionSlug}`} key={index}>  
             <QuestionCard
-            Likes={5}
-            TagArray={["Tags One", "Tags Two"]}
-            Question="Can coffee make you a better developer?"
+            Likes={item.likeCount}
+            TagArray={item.keywords}
+            Question={item.questionTitle}
             Desc="Lorem ipsum dolor sit amet, consectetur adipisicing ad ads ds fsd fd gdf gdf s sc sz  z x"
-            PostedBy="Jonathan Reinink"
-            Date="Aug 18"
+            PostedBy={item.postedBy && item.postedBy.name}
+            Date={new Date(item.createdAt).toLocaleString()}
             />
         </Link>
+          )
+          })}          
         </div>
       </div>
     </>

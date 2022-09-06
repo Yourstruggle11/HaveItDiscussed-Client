@@ -3,7 +3,7 @@ import {
     GET_ALL_QUESTIONS_REQUEST,
     GET_ALL_QUESTIONS_SUCCESS,
     GET_ALL_QUESTIONS_FAILED,
-} from '../constants/questionConstant'
+} from '../constants/questionConstants'
 
 const API = process.env.REACT_APP_NODE_API
 // Get all questions
@@ -18,7 +18,6 @@ export const getAllQuestions = () => async (dispatch) => {
   
       const { data } = await axios.get(
         `${API}/public/discussion/get-all-questions`,
-        body,
         config
       )
       dispatch({

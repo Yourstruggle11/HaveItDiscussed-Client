@@ -19,7 +19,7 @@ export default function Navigator() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/question" element={<Question />} />
+                <Route path="/question/:questionSlug" element={<Question />} />
                 <Route path="/question/new" element={
                 <UserProtection>
                   <PostQuestion /> 
