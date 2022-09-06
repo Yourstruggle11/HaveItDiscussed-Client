@@ -16,7 +16,7 @@ export default function Login() {
     if (userInfo) {
       navigate('/question')
     }
-  }, [userInfo])
+  }, [userInfo,navigate])
   
 
     const notify = () =>
