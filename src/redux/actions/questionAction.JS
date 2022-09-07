@@ -50,7 +50,7 @@ export const getSingleQuestions = (questionSlug) => async (dispatch) => {
       }
   
       const { data } = await axios.get(
-        `${API}/public/discussion/get-all-questions/${questionSlug}`,
+        `${API}/public/discussion/get-single-question/${questionSlug}`,
         config
       )
       dispatch({

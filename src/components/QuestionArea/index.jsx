@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, Date, isComment}) {
+export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, Date, isComment,authorImg}) {
   return (
     <>
                 <div className={isComment ? 'w-4/5 bg-white min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10' : 'w-4/5 bg-white min-h-[15rem] mx-auto p-5'}>
@@ -20,8 +20,8 @@ export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, 
                     <div className='h-full min-w-[15rem] bg-white flex items-center	 justify-center'>
                         <img
                             className="w-10 h-10 rounded-full mr-5"
-                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                            alt="Rounded avatar"
+                            src={authorImg}
+                            alt="Author Image"
                         />
                         <h1 className='mr-5'>{PostedBy}</h1>
                         <div>

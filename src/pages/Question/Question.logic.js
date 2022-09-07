@@ -1,20 +1,23 @@
-import { useState } from "react"
-// import {useSelector,useDispatch} from "react-redux"
-// import { getAllQuestions } from "../../redux/actions/questionAction"
+import { useEffect, useState } from "react"
+import {useSelector,useDispatch} from "react-redux"
+import { useParams } from "react-router-dom"
+import { getSingleQuestions } from "../../redux/actions/questionAction"
 
 export const QuestionLogic = () => {
     const [body, setBody] = useState('')
 
-    // const dispatch = useDispatch()
-    // const {data} = useSelector(state => state.getAllQuestions)
+    const dispatch = useDispatch()
+    const {questionSlug} = useParams()
+    const {data} = useSelector(state => state.getSingleQuestions)
 
-    // useEffect(() => {
-    //     dispatch(getAllQuestions())
-    // }, [dispatch,getAllQuestions])
+    useEffect(() => {
+        dispatch(getSingleQuestions(questionSlug))
+    }, [dispatch])
     
 
     return{
         body,
         setBody,
+        data
     }
 }
