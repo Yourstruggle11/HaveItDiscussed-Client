@@ -1,9 +1,9 @@
 export const ConfigFunction = (userInfo) => {
-    const { token } = userInfo
+    const { JwtToken } = userInfo
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${JwtToken}`
       }
     }
     return config

@@ -7,6 +7,7 @@ import {
     GET_SINGLE_QUESTIONS_SUCCESS,
     GET_SINGLE_QUESTIONS_FAILED,
 } from '../constants/questionConstants'
+import { ConfigFunction } from '../../utils/config'
 
 const API = process.env.REACT_APP_NODE_API
 
@@ -40,17 +41,21 @@ export const getAllQuestions = () => async (dispatch) => {
   }
 
 // Get single question
-export const getSingleQuestions = (questionSlug) => async (dispatch) => {
+export const getSingleQuestions = (questionSlug) => async (dispatch,getState) => {
     try {
       dispatch({
         type: GET_SINGLE_QUESTIONS_REQUEST
       })
+      const {
+        userSignin: { userInfo }
+      } = getState()
+      
       const config = {
         'Content-Type': 'application/json'
       }
   
       const { data } = await axios.get(
-        `${API}/public/discussion/get-single-question/${questionSlug}`,
+        `${API}/public/discussion/get-single-question/${questionSlug}?id=${userInfo && userInfo.id}`,
         config
       )
       dispatch({
