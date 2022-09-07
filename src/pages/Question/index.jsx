@@ -20,6 +20,7 @@ export default function Question() {
                 Desc={data && data.question.questionBody}
                 isComment={false}
                 authorImg={data && data.question.postedBy.profilePic}
+                liked={true}
             />
             <Editor
              body={body}
