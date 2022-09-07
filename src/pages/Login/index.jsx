@@ -11,7 +11,7 @@ export default function Login() {
 
   return (
     <>
-        <div className="bg-blue-400 h-screen w-screen overflow-hidden">
+        <div className="bg-blue-400 h-screen w-full overflow-hidden">
     <div className="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
         <div className="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0 h-[500px]">
             <div className="flex flex-col w-full md:w-1/2 p-4">
@@ -38,7 +38,7 @@ export default function Login() {
             <div className="hidden md:block md:w-1/2 rounded-r-lg" 
             
             >
-                <img className='h-full w-full' src="https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="sidePhoto" />
+                <img className='h-full w-full' src="https://source.unsplash.com/random/900%C3%97700/?discussion,software" alt="sidePhoto" />
                 
             </div>
         </div>
