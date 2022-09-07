@@ -9,7 +9,7 @@ export const HomeLogic = () => {
 
     useEffect(() => {
         dispatch(getAllQuestions())
-    }, [dispatch,getAllQuestions])
+    }, [dispatch])
     
 
     return{
