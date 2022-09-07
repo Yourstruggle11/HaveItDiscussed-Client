@@ -1,45 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { FirebaseContext } from '../../firebase/firebase'
-import {  toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
+import {
+  LoginLogic
+} from "./Login.logic"
 
 export default function Login() {
-    const [isLoading, setIsLoading] = useState(false)
-    const { api } = useContext(FirebaseContext)
+  const {
+    isLoading,
+    googleAuth
+  } = LoginLogic()
 
-  const { userInfo } = useSelector((state) => state.userSignin)
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    if (userInfo) {
-      navigate('/question')
-    }
-  }, [userInfo,navigate])
-  
-
-    const notify = () =>
-    toast('You will be logged in few seconds', {
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined
-    })
-
-          /* -----------------Google Authentication------------- */
-  const googleAuth = async () => {
-    setIsLoading(true)
-    const errMsg = await api.googleSignIn()
-    if (errMsg) {
-      alert(errMsg)
-    } else {
-      notify()
-    }
-    setIsLoading(false)
-}
   return (
     <>
         <div className="bg-blue-400 h-screen w-screen overflow-hidden">

@@ -30,7 +30,19 @@ export const QuestionAreaLogic = () =>{
 
 
     const likeDislikeToggle = () =>{
-        dispatch(likeDislikeQuestion(questionSlug))
+        if(userInfo){
+            dispatch(likeDislikeQuestion(questionSlug))
+        }
+        else{
+            toast("Please Login to like or dislike", {
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined
+              })
+        }
     }
 
     return {

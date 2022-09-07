@@ -1,13 +1,18 @@
 import React from "react";
 import { Popover, Transition, Menu } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate,useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useSelector,useDispatch } from "react-redux";
 import { logoutUser } from "../../redux/actions/userAction";
 
 export default function Navbar() {
   const [searchTerm, setSearchTerm] = React.useState("");
+
+
+
+  // get path name
+  const location = useLocation();
 
   const {userInfo:data} = useSelector((state) => state.userSignin);
 
@@ -20,6 +25,12 @@ export default function Navbar() {
   };
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+
+  const redirectHandler = () => {
+    navigate(`/login?redirect=${location.pathname}`);
+  }
 
 
   return (
@@ -108,12 +119,14 @@ export default function Navbar() {
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                  <Link to="/login">
-                    <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
+                  {/* <Link to="/login"> */}
+                    <div
+                    onClick={redirectHandler}
+                    className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
                       Login
                     </div>
-                  </Link>
+                  {/* </Link> */}
                   </React.Fragment>
                 )}
 
