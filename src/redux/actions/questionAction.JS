@@ -89,7 +89,7 @@ export const likeDislikeQuestion = (questionSlug) => async (dispatch,getState) =
       const config = ConfigFunction(userInfo)
   
       const { data } = await axios.put(
-        `${API}/public/discussion/like-dislike/${questionSlug}`,
+        `${API}/private/discussion/like-dislike/${questionSlug}`,{},
         config
       )
       dispatch({

@@ -1,4 +1,5 @@
 import React from 'react'
+import CommentCard from '../../components/CommentCard/index.jsx'
 import Editor from '../../components/Editor.js'
 import QuestionArea from '../../components/QuestionArea/index.jsx'
 import {QuestionLogic} from "./Question.logic"
@@ -34,14 +35,13 @@ export default function Question() {
             </div>
 
 
-            <QuestionArea
+            <CommentCard
                 // Question={"This is a dummy question"}
                 Likes={15}
                 PostedBy={"Souvik Sen"}
                 Date={"12-05-2020"}
-                Desc={`For the #SystemDesignWeekend, we have an interesting problem - Design Amazon Web Services.
+                Commnet={`For the #SystemDesignWeekend, we have an interesting problem - Design Amazon Web Services.
                 I would love to know how you would solve this question.`}
-                isComment={true}
                 authorImage={"https://flowbite.com/docs/images/people/profile-picture-5.jpg"}
             />
         </div>

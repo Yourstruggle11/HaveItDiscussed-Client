@@ -3,7 +3,7 @@ export const ConfigFunction = (userInfo) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${JwtToken}`
+         Authorization: `Bearer ${JwtToken}`
       }
     }
     return config

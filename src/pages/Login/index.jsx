@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FirebaseContext } from '../../firebase/firebase'
-import { ToastContainer, toast } from 'react-toastify'
+import {  toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -42,17 +42,6 @@ export default function Login() {
 }
   return (
     <>
-          <ToastContainer
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        // className={classes.socialToastContainer}
-      />
         <div className="bg-blue-400 h-screen w-screen overflow-hidden">
     <div className="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
         <div className="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0 h-[500px]">

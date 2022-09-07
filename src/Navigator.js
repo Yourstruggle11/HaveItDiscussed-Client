@@ -1,4 +1,5 @@
 import React from 'react'
+import { ToastContainer } from 'react-toastify'
 import {
     BrowserRouter,
     Routes,
@@ -16,6 +17,17 @@ export default function Navigator() {
     <>
         <BrowserRouter>
                 <Navbar />
+                <ToastContainer
+                  autoClose={5000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  // className={classes.socialToastContainer}
+                />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
