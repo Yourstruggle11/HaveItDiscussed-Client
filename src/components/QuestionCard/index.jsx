@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function QuestionCard({Likes, TagArray, Question, Desc, PostedBy, Date}) {
+export default function QuestionCard({Likes, TagArray, Question, Desc, PostedBy, Date,authorImage}) {
   return (
     <>
               <div className="shadow-md cursor-pointer min-w-[5rem] md:min-w-[50rem] border-1 border border-gray-400  lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal mb-5">
@@ -29,7 +29,7 @@ export default function QuestionCard({Likes, TagArray, Question, Desc, PostedBy,
             <div className="flex items-center">
               <img
                 className="w-10 h-10 rounded-full mr-4"
-                src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                src={authorImage}
                 alt="Avatar"
               />
               <div className="text-sm">

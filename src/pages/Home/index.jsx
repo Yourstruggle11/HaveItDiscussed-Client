@@ -20,6 +20,7 @@ export default function Home() {
             Question={item.questionTitle}
             Desc="Lorem ipsum dolor sit amet, consectetur adipisicing ad ads ds fsd fd gdf gdf s sc sz  z x"
             PostedBy={item.postedBy && item.postedBy.name}
+            authorImage={item.postedBy && item.postedBy.profilePic}
             Date={new Date(item.createdAt).toLocaleString()}
             />
         </Link>
