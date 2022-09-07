@@ -6,6 +6,9 @@ import {
     GET_SINGLE_QUESTIONS_REQUEST,
     GET_SINGLE_QUESTIONS_SUCCESS,
     GET_SINGLE_QUESTIONS_FAILED,
+    LIKE_DISLIKE_QUESTION_REQUEST,
+    LIKE_DISLIKE_QUESTION_SUCCESS,
+    LIKE_DISLIKE_QUESTION_FAILED,
 } from '../constants/questionConstants'
 import { ConfigFunction } from '../../utils/config'
 
@@ -65,6 +68,37 @@ export const getSingleQuestions = (questionSlug) => async (dispatch,getState) =>
     } catch (error) {
       dispatch({
         type: GET_SINGLE_QUESTIONS_FAILED,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message
+      })
+    }
+  }
+
+// Like or dislike question
+export const likeDislikeQuestion = (questionSlug) => async (dispatch,getState) => {
+    try {
+      dispatch({
+        type: LIKE_DISLIKE_QUESTION_REQUEST
+      })
+      const {
+        userSignin: { userInfo }
+      } = getState()
+      
+      const config = ConfigFunction(userInfo)
+  
+      const { data } = await axios.put(
+        `${API}/public/discussion/like-dislike/${questionSlug}`,
+        config
+      )
+      dispatch({
+        type: LIKE_DISLIKE_QUESTION_SUCCESS,
+        payload: data
+      })
+    } catch (error) {
+      dispatch({
+        type: LIKE_DISLIKE_QUESTION_FAILED,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message

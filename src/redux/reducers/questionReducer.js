@@ -5,6 +5,9 @@ import {
     GET_SINGLE_QUESTIONS_REQUEST,
     GET_SINGLE_QUESTIONS_SUCCESS,
     GET_SINGLE_QUESTIONS_FAILED,
+    LIKE_DISLIKE_QUESTION_REQUEST,
+    LIKE_DISLIKE_QUESTION_SUCCESS,
+    LIKE_DISLIKE_QUESTION_FAILED,
   } from '../constants/questionConstants'
 
 
@@ -70,6 +73,42 @@ export const getSingleQuestionsReducer = (
           data: action.payload
         }
       case GET_SINGLE_QUESTIONS_FAILED:
+        return {
+            ...state,
+          loading: false,
+          data: null,
+          error: action.payload
+        }
+      default:
+        return state
+    }
+  }
+
+
+  ///    LIKE OR DISLIKE A QUESTION    ///
+export const likeDislikeQuestionReducer = (
+    state = {
+      loading: false,
+      data: null,
+      isAuthenticated: false,
+      error: null
+    },
+    action
+  ) => {
+    switch (action.type) {
+      case LIKE_DISLIKE_QUESTION_REQUEST:
+        return {
+            ...state,
+          loading: true
+        }
+      case LIKE_DISLIKE_QUESTION_SUCCESS:
+        return {
+            ...state,
+          loading: false,
+          isAuthenticated: true,
+          data: action.payload
+        }
+      case LIKE_DISLIKE_QUESTION_FAILED:
         return {
             ...state,
           loading: false,
