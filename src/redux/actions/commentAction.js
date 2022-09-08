@@ -7,6 +7,9 @@ import {
     LIKE_DISLIKE_COMMENT_REQUEST,
     LIKE_DISLIKE_COMMENT_SUCCESS,
     LIKE_DISLIKE_COMMENT_FAILED,
+    POST_COMMENT_REQUEST,
+    POST_COMMENT_SUCCESS,
+    POST_COMMENT_FAILED,
 } from '../constants/commentConstants'
 // import { ConfigFunction } from '../../utils/config'
 
@@ -67,6 +70,38 @@ export const likeDislikeComment = (commentSlug) => async (dispatch,getState) => 
     } catch (error) {
       dispatch({
         type: LIKE_DISLIKE_COMMENT_FAILED,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message
+      })
+    }
+  }
+
+
+  // Post a new comment
+export const postNewComment = (commentSlug) => async (dispatch,getState) => {
+    try {
+      dispatch({
+        type: POST_COMMENT_REQUEST
+      })
+      const {
+        userSignin: { userInfo }
+      } = getState()
+      
+      const config = ConfigFunction(userInfo)
+  
+      const { data } = await axios.put(
+        `${API}/private/comments/like-dislike/${commentSlug}`,{},
+        config
+      )
+      dispatch({
+        type: POST_COMMENT_SUCCESS,
+        payload: data
+      })
+    } catch (error) {
+      dispatch({
+        type: POST_COMMENT_FAILED,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message

@@ -5,6 +5,9 @@ import {
     LIKE_DISLIKE_COMMENT_REQUEST,
     LIKE_DISLIKE_COMMENT_SUCCESS,
     LIKE_DISLIKE_COMMENT_FAILED,
+    POST_COMMENT_REQUEST,
+    POST_COMMENT_SUCCESS,
+    POST_COMMENT_FAILED,
   } from '../constants/commentConstants'
 
 
@@ -69,6 +72,43 @@ export const likeDislikeCommentReducer = (
           data: action.payload
         }
       case LIKE_DISLIKE_COMMENT_FAILED:
+        return {
+            ...state,
+          loading: false,
+          data: null,
+          error: action.payload
+        }
+      default:
+        return state
+    }
+  }
+
+
+
+  ///    POST A NEW COMMENT   ///
+export const postNewCommentReducer = (
+    state = {
+      loading: false,
+      data: null,
+      isAuthenticated: false,
+      error: null
+    },
+    action
+  ) => {
+    switch (action.type) {
+      case POST_COMMENT_REQUEST:
+        return {
+            ...state,
+          loading: true
+        }
+      case POST_COMMENT_SUCCESS:
+        return {
+            ...state,
+          loading: false,
+          isAuthenticated: true,
+          data: action.payload
+        }
+      case POST_COMMENT_FAILED:
         return {
             ...state,
           loading: false,
