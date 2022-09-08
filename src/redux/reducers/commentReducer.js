@@ -40,7 +40,3 @@ export const getAllCommentsForSingleQusestionReducer = (
         return state
     }
   }
-
-
-
-  

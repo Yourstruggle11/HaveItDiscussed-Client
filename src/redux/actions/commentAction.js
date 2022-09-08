@@ -14,6 +14,7 @@ export const getAllCommentsForSingleQusestion = (questinId) => async (dispatch) 
       dispatch({
         type: GET_ALL_COMMENT_FOR_A_SINGLE_QUESTION_REQUEST
       })
+      
       const config = {
         'Content-Type': 'application/json'
       }

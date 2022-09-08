@@ -8,7 +8,8 @@ export default function Question() {
   const {
     body,
     setBody,
-    data
+    data,
+    allCommentsData,
   } = QuestionLogic()
   return (
     <>
@@ -33,17 +34,21 @@ export default function Question() {
                         Post Comment
                 </button>
             </div>
-
-
-            <CommentCard
-                // Question={"This is a dummy question"}
-                Likes={15}
-                PostedBy={"Souvik Sen"}
-                Date={"12-05-2020"}
-                Commnet={`For the #SystemDesignWeekend, we have an interesting problem - Design Amazon Web Services.
-                I would love to know how you would solve this question.`}
-                authorImage={"https://flowbite.com/docs/images/people/profile-picture-5.jpg"}
-            />
+            {
+                allCommentsData && allCommentsData.body.map((comment,index) => {
+                    return (
+                        <CommentCard
+                            key={index}
+                            Comment={comment.comment}
+                            Likes={comment.likeCount}
+                            PostedBy={comment.commentedBy.name}
+                            Date={new Date(comment.createdAt).toLocaleString()}
+                            authorImg={comment.commentedBy.profilePic}
+                            liked={comment.likedBy}
+                        />
+                    )
+                })
+            }
         </div>
     </>
   )

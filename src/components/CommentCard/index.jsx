@@ -1,6 +1,7 @@
 import React from 'react'
-export default function CommentCard({Question,Commnet, Likes, PostedBy, Date,authorImg,liked}) {
-
+import { useSelector } from 'react-redux'
+export default function CommentCard({Question,Comment, Likes, PostedBy, Date,authorImg,liked}) {
+    const {userInfo} = useSelector((state)=>state.userSignin)
   return (
     <>
                 <div className='w-4/5 bg-white min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10'>
@@ -8,7 +9,7 @@ export default function CommentCard({Question,Commnet, Likes, PostedBy, Date,aut
                     <h1 className='font-bold text-3xl mb-5'>{Question}</h1>
 
 
-                    <h1 className='font-bold text-2xl mb-5'>{Commnet}</h1>
+                    <h1 className='font-bold text-2xl mb-5'>{Comment}</h1>
 
                 </div>
 
@@ -22,7 +23,7 @@ export default function CommentCard({Question,Commnet, Likes, PostedBy, Date,aut
                         <h1 className='mr-5'>{PostedBy}</h1>
                         <div>
                             {
-                                     liked ?
+                                     liked.includes(userInfo && userInfo.id) ?
                                 <svg
                                 // onClick={likeDislikeToggle}
                                 xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" strokeWidth={1.5} stroke="none" className="w-6 h-6 cursor-pointer">
