@@ -8,8 +8,10 @@
     border-radius: 20px;
   }
 
+  
   .ql-editor {
     min-height: 200px;
+    white-space: normal !important;
     background: white;
     border-radius: 5px;
   }

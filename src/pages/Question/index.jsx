@@ -10,6 +10,7 @@ export default function Question() {
     setBody,
     data,
     allCommentsData,
+    postComment
   } = QuestionLogic()
   return (
     <>
@@ -30,7 +31,9 @@ export default function Question() {
              placeholder="Write Your Comment Here..."
                />
             <div className='w-4/5 h-5 m-auto my-10'>
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button
+                onClick={postComment}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Post Comment
                 </button>
             </div>

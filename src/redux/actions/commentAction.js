@@ -80,7 +80,7 @@ export const likeDislikeComment = (commentSlug) => async (dispatch,getState) => 
 
 
   // Post a new comment
-export const postNewComment = (commentSlug) => async (dispatch,getState) => {
+export const postNewComment = (comment,questionId) => async (dispatch,getState) => {
     try {
       dispatch({
         type: POST_COMMENT_REQUEST
@@ -91,8 +91,8 @@ export const postNewComment = (commentSlug) => async (dispatch,getState) => {
       
       const config = ConfigFunction(userInfo)
   
-      const { data } = await axios.put(
-        `${API}/private/comments/like-dislike/${commentSlug}`,{},
+      const { data } = await axios.post(
+        `${API}/private/comments/${questionId}/create`,{comment},
         config
       )
       dispatch({

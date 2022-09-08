@@ -1,4 +1,5 @@
 import React from 'react'
+import InnerHTML from 'dangerously-set-html-content'
 import {CommentCardLogic} from "./CommentCard.logic"
 export default function CommentCard({Question,Comment, Likes, PostedBy, Date,authorImg,liked,commentId}) {
     const {
@@ -12,7 +13,9 @@ export default function CommentCard({Question,Comment, Likes, PostedBy, Date,aut
                     <h1 className='font-bold text-3xl mb-5'>{Question}</h1>
 
 
-                    <h1 className='font-bold text-2xl mb-5'>{Comment}</h1>
+                    <h1 className='font-bold text-2xl mb-5'>
+                        <InnerHTML html={Comment} />
+                        </h1>
 
                 </div>
 
