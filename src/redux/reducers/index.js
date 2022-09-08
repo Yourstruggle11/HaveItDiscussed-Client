@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { getAllCommentsForSingleQusestionReducer } from './commentReducer';
+import { getAllCommentsForSingleQusestionReducer, likeDislikeCommentReducer } from './commentReducer';
 import { getAllQuestionsReducer, getSingleQuestionsReducer, likeDislikeQuestionReducer } from './questionReducer';
 import { userSigninReducer } from './userReducer';
 
@@ -8,7 +8,8 @@ const rootReducer = combineReducers({
   getAllQuestions:getAllQuestionsReducer,
   getSingleQuestions:getSingleQuestionsReducer,
   likeDislikeQuestion:likeDislikeQuestionReducer,
-  getAllCommentsForSingleQusestion:getAllCommentsForSingleQusestionReducer
+  getAllCommentsForSingleQusestion:getAllCommentsForSingleQusestionReducer,
+  likeDislikeComment:likeDislikeCommentReducer
 });
 
 export default rootReducer;

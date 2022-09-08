@@ -3,6 +3,9 @@ import {
     GET_ALL_COMMENT_FOR_A_SINGLE_QUESTION_REQUEST,
     GET_ALL_COMMENT_FOR_A_SINGLE_QUESTION_SUCCESS,
     GET_ALL_COMMENT_FOR_A_SINGLE_QUESTION_FAILED,
+    LIKE_DISLIKE_COMMENT_REQUEST,
+    LIKE_DISLIKE_COMMENT_SUCCESS,
+    LIKE_DISLIKE_COMMENT_FAILED,
 } from '../constants/commentConstants'
 // import { ConfigFunction } from '../../utils/config'
 
@@ -30,6 +33,39 @@ export const getAllCommentsForSingleQusestion = (questinId) => async (dispatch) 
     } catch (error) {
       dispatch({
         type: GET_ALL_COMMENT_FOR_A_SINGLE_QUESTION_FAILED,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message
+      })
+    }
+  }
+
+
+
+  // Like or dislike comment
+export const likeDislikeComment = (commentSlug) => async (dispatch,getState) => {
+    try {
+      dispatch({
+        type: LIKE_DISLIKE_COMMENT_REQUEST
+      })
+      const {
+        userSignin: { userInfo }
+      } = getState()
+      
+      const config = ConfigFunction(userInfo)
+  
+      const { data } = await axios.put(
+        `${API}/private/comments/like-dislike/${commentSlug}`,{},
+        config
+      )
+      dispatch({
+        type: LIKE_DISLIKE_COMMENT_SUCCESS,
+        payload: data
+      })
+    } catch (error) {
+      dispatch({
+        type: LIKE_DISLIKE_COMMENT_FAILED,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message
