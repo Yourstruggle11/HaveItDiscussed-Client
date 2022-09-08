@@ -45,6 +45,7 @@ export default function Question() {
                             Date={new Date(comment.createdAt).toLocaleString()}
                             authorImg={comment.commentedBy.profilePic}
                             liked={comment.likedBy}
+                            commentId={comment._id}
                         />
                     )
                 })

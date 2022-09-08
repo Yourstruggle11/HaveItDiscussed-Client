@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { ConfigFunction } from '../../utils/config'
 import {
     GET_ALL_COMMENT_FOR_A_SINGLE_QUESTION_REQUEST,
     GET_ALL_COMMENT_FOR_A_SINGLE_QUESTION_SUCCESS,
