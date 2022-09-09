@@ -11,9 +11,9 @@ export default function Login() {
 
   return (
     <>
-        <div className="bg-blue-400 h-screen w-full overflow-hidden">
+        <div className="bg-blue-400 h-screen w-full overflow-hidden dark:bg-MB">
     <div className="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
-        <div className="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0 h-[500px]">
+        <div className="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white dark:bg-[#1e1e1e] dark:text-white sm:mx-0 h-[500px]">
             <div className="flex flex-col w-full md:w-1/2 p-4">
                 <div className="flex flex-col flex-1 justify-center mb-8">
                     <h1 className="text-2xl text-center font-thin">Welcome To HaveItDiscussed</h1>

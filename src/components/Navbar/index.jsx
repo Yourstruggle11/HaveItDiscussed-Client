@@ -71,7 +71,7 @@ const {isDark} = useSelector((state) => state.darkMode);
 
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                 {/* Search bar */}
-                <div className="xl:w-[10.5rem]">
+                <div className="xl:w-[10.5rem] mr-5">
                   <label className="relative block">
                     <div className="input-group relative flex flex-wrap items-stretch w-full">
                       <input
@@ -100,16 +100,15 @@ const {isDark} = useSelector((state) => state.darkMode);
                     )}
                   </label>
                 </div>
-
+                {isDark? 
+                      <SunIcon className="h-6 w-6 cursor-pointer dark:text-white" onClick={handleDarkMode} />
+                      
+                      : <MoonIcon className="h-6 w-6" onClick={handleDarkMode} />}
                 {data ? (
                   <React.Fragment>
                     <div
                       className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                       {/* <item.icons className={item.className} onClick={item.function} /> */}
-                      {isDark? 
-                      <SunIcon className="h-6 w-6 cursor-pointer dark:text-white" onClick={handleDarkMode} />
-                      
-                      : <MoonIcon className="h-6 w-6" onClick={handleDarkMode} />}
                     </div>
                     <div
                       onClick={() =>{
@@ -220,12 +219,12 @@ const {isDark} = useSelector((state) => state.darkMode);
                     </label>
                   </div>
                   <div className={!data ? "grid items-center" : "flex flex-col justify-items-center items-center"}>
-                  {data ? (
-                  <React.Fragment>
-                                          {isDark? 
+                  {isDark? 
                       <SunIcon className="h-6 w-6 cursor-pointer dark:text-white" onClick={handleDarkMode} />
                       
                       : <MoonIcon className="h-6 w-6" onClick={handleDarkMode} />}
+                  {data ? (
+                  <React.Fragment>
                     <div
                     onClick={() =>{
                       dispatch(logoutUser())
