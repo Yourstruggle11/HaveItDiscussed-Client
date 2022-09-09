@@ -13,6 +13,8 @@ export const QuestionLogic = () => {
     const {data:allCommentsData} = useSelector(state => state.getAllCommentsForSingleQusestion)
     const {data:postNewCommentData} = useSelector(state => state.postNewComment)
     const {userInfo} = useSelector(state => state.userSignin)
+    const {data:likeDislike} = useSelector((state)=>state.likeDislikeComment)
+    const {data:singleQuestionData} = useSelector(state => state.getSingleQuestions)
 
     useEffect(() => {
         dispatch(getSingleQuestions(questionSlug))
@@ -38,6 +40,22 @@ export const QuestionLogic = () => {
         dispatch(getAllCommentsForSingleQusestion(data && data.question._id))
         }
     }, [postNewCommentData,data,dispatch])
+
+
+
+    useEffect(() => {
+        if(likeDislike){
+            toast(likeDislike.message, {
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined
+              })
+              dispatch(getAllCommentsForSingleQusestion(singleQuestionData && singleQuestionData.question._id))
+        }
+    }, [likeDislike,dispatch,singleQuestionData])
 
     const postComment = () =>{
         if(userInfo){

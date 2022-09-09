@@ -7,24 +7,10 @@ export const CommentCardLogic = (commentId) => {
 
 
     const {userInfo} = useSelector((state)=>state.userSignin)
-    const {data:likeDislike} = useSelector((state)=>state.likeDislikeComment)
-    const {data:singleQuestionData} = useSelector(state => state.getSingleQuestions)
     const dispatch = useDispatch()
 
 
-    useEffect(() => {
-        if(likeDislike){
-            toast(likeDislike.message, {
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined
-              })
-              dispatch(getAllCommentsForSingleQusestion(singleQuestionData && singleQuestionData.question._id))
-        }
-    }, [likeDislike,dispatch,singleQuestionData])
+
 
 
     const likeDislikeToggle = () =>{
