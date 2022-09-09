@@ -29,6 +29,7 @@ export const QuestionLogic = () => {
 
     useEffect(() => {
         if(postNewCommentData){
+            setBody('')
             toast("Your comment posted successfully❤️", {
                 autoClose: 5000,
                 hideProgressBar: false,

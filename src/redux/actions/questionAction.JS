@@ -9,6 +9,9 @@ import {
     LIKE_DISLIKE_QUESTION_REQUEST,
     LIKE_DISLIKE_QUESTION_SUCCESS,
     LIKE_DISLIKE_QUESTION_FAILED,
+    CREATE_QUESTION_REQUEST,
+    CREATE_QUESTION_SUCCESS,
+    CREATE_QUESTION_FAILED,
 } from '../constants/questionConstants'
 import { ConfigFunction } from '../../utils/config'
 
@@ -99,6 +102,42 @@ export const likeDislikeQuestion = (questionSlug) => async (dispatch,getState) =
     } catch (error) {
       dispatch({
         type: LIKE_DISLIKE_QUESTION_FAILED,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message
+      })
+    }
+  }
+
+
+// create new question
+export const createNewQuestion = (questionTitle,questionBody) => async (dispatch,getState) => {
+    try {
+      dispatch({
+        type: CREATE_QUESTION_REQUEST
+      })
+      const {
+        userSignin: { userInfo }
+      } = getState()
+      
+      const config = ConfigFunction(userInfo)
+
+      const body = {
+
+      }
+  
+      const { data } = await axios.post(
+        `${API}/private/discussion/new`,body,
+        config
+      )
+      dispatch({
+        type: CREATE_QUESTION_SUCCESS,
+        payload: data
+      })
+    } catch (error) {
+      dispatch({
+        type: CREATE_QUESTION_FAILED,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message
