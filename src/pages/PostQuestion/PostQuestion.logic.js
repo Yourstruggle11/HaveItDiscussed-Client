@@ -67,6 +67,5 @@ export const PostQuestionLogic = () => {
         title,
         setTitle,
         setKeywordInput,
-        keywordInput
     }
 }

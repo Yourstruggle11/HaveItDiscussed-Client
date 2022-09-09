@@ -1,7 +1,6 @@
-import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
-import { getAllCommentsForSingleQusestion, likeDislikeComment } from '../../redux/actions/commentAction'
+import {  likeDislikeComment } from '../../redux/actions/commentAction'
 
 export const CommentCardLogic = (commentId) => {
 
