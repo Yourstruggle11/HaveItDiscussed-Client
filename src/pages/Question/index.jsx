@@ -14,7 +14,7 @@ export default function Question() {
   } = QuestionLogic()
   return (
     <>
-        <div className='w-full min-h-[50rem] py-10 bg-[#f9fafb] pt-[2rem]'>
+        <div className='w-full min-h-[50rem] py-10 bg-[#f9fafb] dark:bg-MB pt-[2rem]'>
             <QuestionArea
                 Question={data && data.question.questionTitle}
                 Likes={data && data.question.likeCount}

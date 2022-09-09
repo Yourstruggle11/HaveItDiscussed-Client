@@ -8,7 +8,7 @@ export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, 
     } = QuestionAreaLogic()
   return (
     <>
-                <div className={isComment ? 'w-4/5 bg-white dark:bg-MB min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10' : 'w-4/5 bg-white min-h-[15rem] mx-auto p-5'}>
+                <div className={isComment ? 'w-4/5 bg-white dark:bg-MB min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10' : 'w-4/5 bg-white dark:bg-[#1e1e1e] dark:text-white min-h-[15rem] mx-auto p-5'}>
                 <div className='min-h-[10rem]' >
                     <h1 className='font-bold text-3xl mb-5'>{Question}</h1>
 
@@ -23,8 +23,8 @@ export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, 
 
                 </div>
 
-                <div className='w-full h-[3rem] flex itmes-center justify-between flex-col sm:flex-row'>
-                    <div className='h-full min-w-[15rem] bg-white flex items-center	 justify-center'>
+                <div className='w-full h-[3rem] flex itmes-center justify-between flex-col sm:flex-row dark:bg-[#1e1e1e] dark:text-white'>
+                    <div className='h-full min-w-[15rem] bg-white flex items-center	 justify-center dark:bg-[#1e1e1e] dark:text-white'>
                         <img
                             className="w-10 h-10 rounded-full mr-5"
                             src={authorImg}
@@ -55,7 +55,7 @@ export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, 
 
                             <h1 className='ml-5 font-bold text-2xl mb-5'>{Likes}</h1>
                         </div>
-                    <div className='h-full min-w-[15rem] bg-white flex items-center	 justify-center'>
+                    <div className='h-full min-w-[15rem] bg-white flex items-center	 justify-center dark:bg-[#1e1e1e] dark:text-white'>
                         {Date}
                     </div>
                 </div>

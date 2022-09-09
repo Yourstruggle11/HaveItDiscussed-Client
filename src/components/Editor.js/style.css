@@ -6,7 +6,47 @@
     margin: 0 auto;
     margin-top: 5rem;
     border-radius: 20px;
+    font-size: 20px;
   }
+
+  .dark .quill{
+    background-color: #1e1e1e !important;
+    color: white !important;
+  }
+
+  .dark .ql-snow,.ql-container,.ql-editor{
+    background-color: #1e1e1e !important;
+    color: white !important;
+  }
+  .dark .ql-editor{
+    background-color: #1e1e1e !important;
+    color: white !important;
+  }
+  .dark .ql-blank{
+    background-color: #1e1e1e !important;
+    color: white !important;
+  }
+
+  .dark .quill > .ql-container > .ql-editor.ql-blank::before{
+    font-size: 20px;
+    color: white !important;
+}
+
+   .quill{
+    background-color: white !important;
+    color: black !important;
+  }
+
+   .ql-snow,.ql-container,.ql-editor{
+    background-color: white !important;
+    color: black !important;
+  }
+
+
+   .quill > .ql-container > .ql-editor.ql-blank::before{
+    font-size: 20px;
+    color: black !important;
+}
 
   
   .ql-editor {
