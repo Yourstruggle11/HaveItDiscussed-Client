@@ -25,7 +25,7 @@ export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, 
                         <img
                             className="w-10 h-10 rounded-full mr-5"
                             src={authorImg}
-                            alt="Author Image"
+                            alt="Author Pictue"
                         />
                         <h1 className='mr-5'>{PostedBy}</h1>
                         <div>

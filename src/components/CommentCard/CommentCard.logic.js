@@ -24,7 +24,7 @@ export const CommentCardLogic = (commentId) => {
               })
               dispatch(getAllCommentsForSingleQusestion(singleQuestionData && singleQuestionData.question._id))
         }
-    }, [likeDislike])
+    }, [likeDislike,dispatch,singleQuestionData])
 
 
     const likeDislikeToggle = () =>{

@@ -24,7 +24,7 @@ export default function CommentCard({Question,Comment, Likes, PostedBy, Date,aut
                         <img
                             className="w-10 h-10 rounded-full mr-5"
                             src={authorImg}
-                            alt="Author Image"
+                            alt="Author Pic"
                         />
                         <h1 className='mr-5'>{PostedBy}</h1>
                         <div>

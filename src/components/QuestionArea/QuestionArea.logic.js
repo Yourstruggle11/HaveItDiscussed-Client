@@ -26,7 +26,7 @@ export const QuestionAreaLogic = () =>{
               })
               dispatch(getSingleQuestions(questionSlug))
         }
-    }, [likeDislike])
+    }, [likeDislike,questionSlug,dispatch])
 
 
     const likeDislikeToggle = () =>{

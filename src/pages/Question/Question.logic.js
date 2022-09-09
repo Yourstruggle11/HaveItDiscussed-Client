@@ -16,7 +16,7 @@ export const QuestionLogic = () => {
 
     useEffect(() => {
         dispatch(getSingleQuestions(questionSlug))
-    }, [dispatch])
+    }, [dispatch,questionSlug])
 
     useEffect(() => {
         if(data){
@@ -37,7 +37,7 @@ export const QuestionLogic = () => {
               })
         dispatch(getAllCommentsForSingleQusestion(data && data.question._id))
         }
-    }, [postNewCommentData])
+    }, [postNewCommentData,data,dispatch])
 
     const postComment = () =>{
         if(userInfo){
