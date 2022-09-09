@@ -20,13 +20,15 @@ export default function PostQuestion() {
 
   return (
     <>
-      <div className="w-full min-h-[50rem] py-10 bg-[#f9fafb] pt-[2rem]">
-        <div className="w-11/12 bg-white min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10">
+      <div className="w-full min-h-[50rem] py-10 bg-[#f9fafb] pt-[2rem] dark:bg-MB">
+        <div className="w-11/12 bg-white min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10 dark:bg-black">
           <div className="flex justify-center">
             <div className="mb-3 w-full">
               <input
                 type="text"
                 className="
+                            dark:bg-[#1e1e1e]
+                            dark:placeholder:text-white
                             form-control
                             block
                             w-full
@@ -68,6 +70,8 @@ export default function PostQuestion() {
                 onChange={(e) => setKeywordInput(e.target.value)}
                 value={keywordInput}
                 className="
+                dark:bg-[#1e1e1e]
+                dark:placeholder:text-white
                             form-control
                             block
                             w-full
@@ -87,7 +91,8 @@ export default function PostQuestion() {
                 id="exampleFormControlInput1"
                 placeholder="Add some related keywords..."
               />
-              <p className="text-yellow-900 text-xs italic">
+              <p className="text-yellow-900 text-xs italic                            
+                            dark:text-white">
                 To remove any keyword, click on them!.
               </p>
             </div>
