@@ -1,23 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./style.css";
+import {PostQuestionLogic} from "./PostQuestion.logic"
 
 export default function PostQuestion() {
-  const [body, setBody] = useState("");
-  const [keywords, setKeywords] = useState([]);
-  const [keywordInput, setKeywordInput] = useState("");
-
-  const addTag = (e) => {
-    if (e.key === "Enter" && e.target.value !== "") {
-      setKeywords([...keywords, keywordInput]);
-      setKeywordInput("");
-    }
-  };
-
-  const removeTag = (e) => {
-    setKeywords(keywords.filter((tag) => tag !== e));
-  };
+  const {    
+    removeTag,
+    body,
+    setBody,
+    addTag,
+    keywords,
+    keywordInput,
+    setKeywordInput,  
+    title,
+    setTitle,
+    handleSubmit
+  } = PostQuestionLogic();
 
   return (
     <>
@@ -45,6 +44,8 @@ export default function PostQuestion() {
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                         "
                 id="exampleFormControlInput1"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
                 placeholder="What's you want to discuss?"
               />
             </div>
@@ -107,7 +108,9 @@ export default function PostQuestion() {
           </div>
 
           <div className="w-4/5 h-5 my-10">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button
+            onClick={handleSubmit}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Start Discussion
             </button>
           </div>

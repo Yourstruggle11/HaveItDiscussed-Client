@@ -112,7 +112,7 @@ export const likeDislikeQuestion = (questionSlug) => async (dispatch,getState) =
 
 
 // create new question
-export const createNewQuestion = (questionTitle,questionBody) => async (dispatch,getState) => {
+export const createNewQuestion = (questionTitle,questionBody,keywords) => async (dispatch,getState) => {
     try {
       dispatch({
         type: CREATE_QUESTION_REQUEST
@@ -124,7 +124,9 @@ export const createNewQuestion = (questionTitle,questionBody) => async (dispatch
       const config = ConfigFunction(userInfo)
 
       const body = {
-
+        questionTitle,
+        questionBody,
+        keywords
       }
   
       const { data } = await axios.post(
