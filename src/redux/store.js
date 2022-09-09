@@ -9,7 +9,10 @@ const initialState = {
     userInfo:
       JSON.parse(localStorage.getItem('userInfo')) ||
       JSON.parse(sessionStorage.getItem('userInfo'))
-  }
+  },
+  darkMode: {
+    isDark: false,
+}
 }
 
 const middleware = [thunk]

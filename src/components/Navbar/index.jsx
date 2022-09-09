@@ -1,6 +1,6 @@
 import React from "react";
 import { Popover, Transition, Menu } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { MenuIcon, XIcon,MoonIcon, SunIcon } from "@heroicons/react/outline";
 import { Link, useNavigate,useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useSelector,useDispatch } from "react-redux";
@@ -15,6 +15,8 @@ export default function Navbar() {
   const location = useLocation();
 
   const {userInfo:data} = useSelector((state) => state.userSignin);
+const {isDark} = useSelector((state) => state.darkMode);
+
 
   // added debounce to prevent the search term from being updated too often
   const search = (value) => {
@@ -27,6 +29,16 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const handleDarkMode = () => {
+    if (!isDark) {
+      dispatch({ type: "DARK", payload: true });
+      localStorage.theme = 'dark'
+    } else {
+      dispatch({ type: "DARK", payload: false });
+      localStorage.theme = 'light'
+    }
+  }
+
 
   const redirectHandler = () => {
     navigate(`/login?redirect=${location.pathname}`);
@@ -36,7 +48,7 @@ export default function Navbar() {
   return (
     <>
       <div className="sticky top-0 z-50">
-        <Popover className="relative bg-[#fff] dark:bg-MB">
+        <Popover className="relative bg-[#fff dark:bg-MB">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
               {/* Heading / Logo */}
@@ -91,6 +103,14 @@ export default function Navbar() {
 
                 {data ? (
                   <React.Fragment>
+                    <div
+                      className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
+                      {/* <item.icons className={item.className} onClick={item.function} /> */}
+                      {isDark? 
+                      <SunIcon className="h-6 w-6 cursor-pointer dark:text-white" onClick={handleDarkMode} />
+                      
+                      : <MoonIcon className="h-6 w-6" onClick={handleDarkMode} />}
+                    </div>
                     <div
                       onClick={() =>{
                         dispatch(logoutUser())
@@ -156,7 +176,7 @@ export default function Navbar() {
               focus
               className="absolute top-[-5rem] inset-x-0 p-2 transition transform origin-top-right md:hidden z-50 bg-[#fff] dark:bg-MB"
             >
-              <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+              <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-MB divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5">
                   <div className="flex items-center justify-between">
                     <Link to='/'>
@@ -202,6 +222,10 @@ export default function Navbar() {
                   <div className={!data ? "grid items-center" : "flex flex-col justify-items-center items-center"}>
                   {data ? (
                   <React.Fragment>
+                                          {isDark? 
+                      <SunIcon className="h-6 w-6 cursor-pointer dark:text-white" onClick={handleDarkMode} />
+                      
+                      : <MoonIcon className="h-6 w-6" onClick={handleDarkMode} />}
                     <div
                     onClick={() =>{
                       dispatch(logoutUser())

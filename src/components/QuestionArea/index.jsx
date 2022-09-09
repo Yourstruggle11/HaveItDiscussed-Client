@@ -1,5 +1,6 @@
 import React from 'react'
 import {QuestionAreaLogic} from "./QuestionArea.logic"
+import InnerHTML from 'dangerously-set-html-content'
 export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, Date, isComment,authorImg,liked}) {
     const {
         likeDislikeToggle,
@@ -7,7 +8,7 @@ export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, 
     } = QuestionAreaLogic()
   return (
     <>
-                <div className={isComment ? 'w-4/5 bg-white min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10' : 'w-4/5 bg-white min-h-[15rem] mx-auto p-5'}>
+                <div className={isComment ? 'w-4/5 bg-white dark:bg-MB min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10' : 'w-4/5 bg-white min-h-[15rem] mx-auto p-5'}>
                 <div className='min-h-[10rem]' >
                     <h1 className='font-bold text-3xl mb-5'>{Question}</h1>
 
@@ -15,7 +16,9 @@ export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, 
                     {isComment ? 
                     <h1 className='font-bold text-2xl mb-5'>{Desc}</h1>
                     : 
-                    <p>{Desc}</p>
+                    <p>
+                        <InnerHTML html={Desc} />x
+                        </p>
                     }
 
                 </div>

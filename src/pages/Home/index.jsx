@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <div className="relative dark:bg-[red1]bg-[#f9fafb] dark:bg-MB overflow-hidden pt-10 h-full">
-      <div className="max-w-sm w-full lg:max-w-full lg:flex items-center flex-col justify-center bg-[#f9fafb]">
+      <div className="max-w-sm w-full lg:max-w-full lg:flex items-center flex-col justify-center bg-[#f9fafb] dark:bg-MB">
         {data && data.questions.map((item,index) => {
           return(
             <Link to={`/question/${item.questionSlug}`} key={index}>  
