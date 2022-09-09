@@ -14,10 +14,10 @@ export default function QuestionArea({Question,Desc, TagArray, Likes, PostedBy, 
 
 
                     {isComment ? 
-                    <h1 className='font-bold text-2xl mb-5'>{Desc}</h1>
+                    <h1 className='font-bold text-2xl mb-5 '>{Desc}</h1>
                     : 
                     <p>
-                        <InnerHTML html={Desc} />x
+                        <InnerHTML html={Desc} />
                         </p>
                     }
 

@@ -48,7 +48,7 @@ const {isDark} = useSelector((state) => state.darkMode);
   return (
     <>
       <div className="sticky top-0 z-50">
-        <Popover className="relative bg-[#fff dark:bg-MB">
+        <Popover className="relative bg-[#fff] dark:bg-MB">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
               {/* Heading / Logo */}
@@ -220,9 +220,9 @@ const {isDark} = useSelector((state) => state.darkMode);
                   </div>
                   <div className={!data ? "grid items-center" : "flex flex-col justify-items-center items-center"}>
                   {isDark? 
-                      <SunIcon className="h-6 w-6 cursor-pointer dark:text-white" onClick={handleDarkMode} />
+                      <SunIcon className="h-6 w-6 cursor-pointer dark:text-white m-auto" onClick={handleDarkMode} />
                       
-                      : <MoonIcon className="h-6 w-6" onClick={handleDarkMode} />}
+                      : <MoonIcon className="h-6 w-6 m-auto" onClick={handleDarkMode} />}
                   {data ? (
                   <React.Fragment>
                     <div
