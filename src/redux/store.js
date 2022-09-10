@@ -5,21 +5,21 @@ import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 
 const initialState = {
-  userSignin: {
-    userInfo:
-      JSON.parse(localStorage.getItem('userInfo')) ||
-      JSON.parse(sessionStorage.getItem('userInfo'))
-  },
-  darkMode: {
-    isDark: false,
-}
+    userSignin: {
+        userInfo:
+            JSON.parse(localStorage.getItem('userInfo')) ||
+            JSON.parse(sessionStorage.getItem('userInfo'))
+    },
+    darkMode: {
+        isDark: false
+    }
 }
 
 const middleware = [thunk]
 const store = createStore(
-  rootReducer,
-  initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
+    rootReducer,
+    initialState,
+    composeWithDevTools(applyMiddleware(...middleware))
 )
 
 export default store

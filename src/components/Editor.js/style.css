@@ -1,4 +1,4 @@
-.quill{
+.quill {
     box-shadow: 1px 1px 20px -14px;
 }
 .text-editor {
@@ -7,102 +7,103 @@
     margin-top: 5rem;
     border-radius: 20px;
     font-size: 20px;
-  }
+}
 
-  .dark .quill{
+.dark .quill {
     background-color: #1e1e1e !important;
     color: white !important;
-  }
+}
 
-  .dark .ql-snow,.ql-container,.ql-editor{
+.dark .ql-snow,
+.ql-container,
+.ql-editor {
     background-color: #1e1e1e !important;
     color: white !important;
-  }
-  .dark .ql-editor{
+}
+.dark .ql-editor {
     background-color: #1e1e1e !important;
     color: white !important;
-  }
-  .dark .ql-blank{
+}
+.dark .ql-blank {
     background-color: #1e1e1e !important;
     color: white !important;
-  }
+}
 
-  .dark .quill > .ql-container > .ql-editor.ql-blank::before{
+.dark .quill > .ql-container > .ql-editor.ql-blank::before {
     font-size: 20px;
     color: white !important;
 }
 
-   .quill{
+.quill {
     background-color: white !important;
     color: black !important;
-  }
+}
 
-   .ql-snow,.ql-container,.ql-editor{
+.ql-snow,
+.ql-container,
+.ql-editor {
     background-color: white !important;
     color: black !important;
-  }
+}
 
-
-   .quill > .ql-container > .ql-editor.ql-blank::before{
+.quill > .ql-container > .ql-editor.ql-blank::before {
     font-size: 20px;
     color: black !important;
 }
 
-  
-  .ql-editor {
+.ql-editor {
     min-height: 200px;
     white-space: normal !important;
     background: white;
     border-radius: 5px;
-  }
-  /* #toolbar{
+}
+/* #toolbar{
     top: 0px;
     position: sticky;
     z-index: 5000;
     background: #fff;
   } */
 
-
-  /* Set content for font-families */
+/* Set content for font-families */
 .ql-font-arial,
-.ql-font span[data-value="arial"]::before {
-  font-family: Arial, sans-serif;
+.ql-font span[data-value='arial']::before {
+    font-family: Arial, sans-serif;
 }
 .ql-font-comic-sans,
-.ql-font span[data-value="comic-sans"]::before {
-  font-family: "Comic Sans MS", cursive, sans-serif;
+.ql-font span[data-value='comic-sans']::before {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 .ql-font-courier-new,
-.ql-font span[data-value="courier-new"]::before {
-  font-family: "Courier New";
+.ql-font span[data-value='courier-new']::before {
+    font-family: 'Courier New';
 }
 .ql-font-georgia,
-.ql-font span[data-value="georgia"]::before {
-  font-family: Georgia, serif;
+.ql-font span[data-value='georgia']::before {
+    font-family: Georgia, serif;
 }
 .ql-font-helvetica,
-.ql-font span[data-value="helvetica"]::before {
-  font-family: Helvetica, sans-serif;
+.ql-font span[data-value='helvetica']::before {
+    font-family: Helvetica, sans-serif;
 }
 .ql-font-lucida,
-.ql-font span[data-value="lucida"]::before {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+.ql-font span[data-value='lucida']::before {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 }
 
 /* Set content for sizes */
 .ql-size-extra-small,
-.ql-size span[data-value="extra-small"]::before {
-  font-size: 13px !important;
+.ql-size span[data-value='extra-small']::before {
+    font-size: 13px !important;
 }
 .ql-size-small,
-.ql-size span[data-value="small"]::before {
-  font-size: 14px !important;
+.ql-size span[data-value='small']::before {
+    font-size: 14px !important;
 }
 .ql-size-medium,
-.ql-size span[data-value="medium"]::before {
-  font-size: 18px !important;
+.ql-size span[data-value='medium']::before {
+    font-size: 18px !important;
 }
 .ql-size-large,
-.ql-size span[data-value="large"]::before {
-  font-size: 20px !important;
+.ql-size span[data-value='large']::before {
+    font-size: 20px !important;
 }
