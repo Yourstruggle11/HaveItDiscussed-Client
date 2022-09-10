@@ -298,12 +298,12 @@ export default function Navbar() {
                                             </React.Fragment>
                                         ) : (
                                             <React.Fragment>
-                                                <Link to="/login">
-                                                    <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
+                                                    <div 
+                                                    onClick={redirectHandler}
+                                                    className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                                                         {/* <item.icons className={item.className} onClick={item.function} /> */}
                                                         Login
                                                     </div>
-                                                </Link>
                                             </React.Fragment>
                                         )}
                                     </div>
