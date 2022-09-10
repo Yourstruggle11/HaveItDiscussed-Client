@@ -15,7 +15,7 @@ const {isDark} = useSelector((state) => state.darkMode);
       document.documentElement.classList.remove('dark')
       dispatch({type: 'DARK', payload: false})
     }
-  }, [isDark])
+  }, [isDark,dispatch])
   
   return <Navigator />;
 }

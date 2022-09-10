@@ -18,7 +18,7 @@ import { ConfigFunction } from '../../utils/config'
 const API = process.env.REACT_APP_NODE_API
 
 // Get all questions
-export const getAllQuestions = () => async (dispatch) => {
+export const getAllQuestions = (page=1,limit=10,search='false') => async (dispatch) => {
     try {
       dispatch({
         type: GET_ALL_QUESTIONS_REQUEST
@@ -28,7 +28,7 @@ export const getAllQuestions = () => async (dispatch) => {
       }
   
       const { data } = await axios.get(
-        `${API}/public/discussion/get-all-questions`,
+        `${API}/public/discussion/get-all-questions?page=${page}&limit=${limit}&search=${search}`,
         config
       )
       dispatch({

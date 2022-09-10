@@ -5,6 +5,7 @@ import { Link, useNavigate,useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useSelector,useDispatch } from "react-redux";
 import { logoutUser } from "../../redux/actions/userAction";
+import { getAllQuestions } from "../../redux/actions/questionAction";
 
 export default function Navbar() {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -17,16 +18,16 @@ export default function Navbar() {
   const {userInfo:data} = useSelector((state) => state.userSignin);
 const {isDark} = useSelector((state) => state.darkMode);
 
+const dispatch = useDispatch()
+
 
   // added debounce to prevent the search term from being updated too often
   const search = (value) => {
-    console.log("====================================");
-    console.log(value);
-    console.log("====================================");
+    // const {data} = useSelector(state => state.getAllQuestions)
     setSearchTerm(value);
+    dispatch(getAllQuestions('','',value))
   };
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleDarkMode = () => {
