@@ -19,16 +19,16 @@ export default function Navbar() {
 const {isDark} = useSelector((state) => state.darkMode);
 
 const dispatch = useDispatch()
+const navigate = useNavigate();
 
 
   // added debounce to prevent the search term from being updated too often
   const search = (value) => {
     // const {data} = useSelector(state => state.getAllQuestions)
     setSearchTerm(value);
-    dispatch(getAllQuestions('','',value))
+    navigate(`/?search=${value}`);
   };
 
-  const navigate = useNavigate();
 
   const handleDarkMode = () => {
     if (!isDark) {
