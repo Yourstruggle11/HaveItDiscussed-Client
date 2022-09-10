@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import { createNewQuestion } from '../../redux/actions/questionAction'
 
 export const PostQuestionLogic = () => {
-    const { data } = useSelector((state) => state.createNewQuestion)
+    const { data,loading } = useSelector((state) => state.createNewQuestion)
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
@@ -64,6 +64,7 @@ export const PostQuestionLogic = () => {
         handleSubmit,
         title,
         setTitle,
-        setKeywordInput
+        setKeywordInput,
+        loading
     }
 }

@@ -1,11 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Loader from '../../components/Loader'
 import Pagination from '../../components/Pagination'
 import QuestionCard from '../../components/QuestionCard'
 import { HomeLogic } from './Home.logic'
 
 export default function Home() {
-    const { pageRerender, data, page, limit } = HomeLogic()
+    const { pageRerender, data, page, limit,loading } = HomeLogic()
+    if(loading){
+       return <Loader />
+        
+    }
     return (
         <>
             <div className="relative bg-[#f9fafb] dark:bg-MB overflow-hidden pt-10 h-full">

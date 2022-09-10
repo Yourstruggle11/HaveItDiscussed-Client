@@ -15,7 +15,7 @@ export const HomeLogic = () => {
     const Page = query.get('page')
     const SearchTerm = query.get('search')
 
-    const { data } = useSelector((state) => state.getAllQuestions)
+    const { data, loading } = useSelector((state) => state.getAllQuestions)
 
     const navigate = useNavigate()
 
@@ -34,6 +34,7 @@ export const HomeLogic = () => {
         pageRerender,
         page,
         setPage,
-        limit
+        limit,
+        loading
     }
 }

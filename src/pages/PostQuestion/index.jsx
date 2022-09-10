@@ -3,6 +3,7 @@ import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import './style.css'
 import { PostQuestionLogic } from './PostQuestion.logic'
+import Loader from '../../components/Loader'
 
 export default function PostQuestion() {
     const {
@@ -15,9 +16,13 @@ export default function PostQuestion() {
         setKeywordInput,
         title,
         setTitle,
-        handleSubmit
+        handleSubmit,
+        loading
     } = PostQuestionLogic()
-
+    if(loading){
+        return <Loader />
+         
+     }
     return (
         <>
             <div className="w-full min-h-[50rem] py-10 bg-[#f9fafb] pt-[2rem] dark:bg-MB">
