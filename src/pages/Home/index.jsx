@@ -32,15 +32,15 @@ export default function Home() {
         </Link>
           )
           }) :
-          <div className="w-full">
-            <h2 className="text-center mx-3 text-3xl font-semibold decoration-blue-700 text-blue-700">
+          <div className="w-full h-screen overflow-hidden">
+            <h2 className="text-center mt-[5rem] mx-3 text-3xl font-semibold decoration-blue-700 text-blue-700">
               No Results Found
             </h2>
           </div>
               
           } 
 
-            {data ? <Pagination
+            {data && data.questions.length > 0 ? <Pagination
             totalBlogs={data && data.totalQuestions}
             onPageClick={pageRerender}
             currentPage={page}

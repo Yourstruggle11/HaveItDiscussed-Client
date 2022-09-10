@@ -104,7 +104,7 @@ const navigate = useNavigate();
                 {isDark? 
                       <SunIcon className="h-6 w-6 cursor-pointer dark:text-white" onClick={handleDarkMode} />
                       
-                      : <MoonIcon className="h-6 w-6" onClick={handleDarkMode} />}
+                      : <MoonIcon className="h-6 w-6 cursor-pointer" onClick={handleDarkMode} />}
                 {data ? (
                   <React.Fragment>
                     <div

@@ -7,7 +7,7 @@ export default function Pagination({ totalBlogs, onPageClick, currentPage, limit
   let firstLimit = (currentPage - 1) * limit + 1;
 
   return (
-    <div className="bg-white w-full h-[5rem] px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6 mt-5 dark:outline-2 dark:outline-white">
+    <div className="bg-white w-full h-[5rem] px-4 py-3 flex dark:bg-MB dark:text-white items-center justify-between border-t border-gray-200 sm:px-6 mt-5 dark:outline-2 dark:outline-white">
       <div className="flex-1 flex justify-between sm:hidden">
         {currentPage > 1 && (
           <button
@@ -29,7 +29,7 @@ export default function Pagination({ totalBlogs, onPageClick, currentPage, limit
       <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div>
           {totalBlogs ? (
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-gray-700 dark:text-white">
               Showing <span className="font-medium">{(currentPage - 1) * limit + 1}</span> to{' '}
               <span className="font-medium">
                 {/* if current page is the last page then show total blogs */}
