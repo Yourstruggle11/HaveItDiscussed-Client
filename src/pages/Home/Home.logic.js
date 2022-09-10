@@ -37,16 +37,3 @@ export const HomeLogic = () => {
         limit
     }
 }
-
-        setPage,
-        limit
-    }
-}
-        setPage,
-        limit
-    }
-}
-        setPage,
-        limit
-    }
-}
