@@ -19,7 +19,7 @@ export const QuestionLogic = () => {
     const { data: postNewCommentData } = useSelector((state) => state.postNewComment)
     const { userInfo } = useSelector((state) => state.userSignin)
     const { data: likeDislike } = useSelector((state) => state.likeDislikeComment)
-    const { data: singleQuestionData,loading } = useSelector(
+    const { data: singleQuestionData } = useSelector(
         (state) => state.getSingleQuestions
     )
 
@@ -98,6 +98,5 @@ export const QuestionLogic = () => {
         data,
         allCommentsData,
         postComment,
-        loading
     }
 }
