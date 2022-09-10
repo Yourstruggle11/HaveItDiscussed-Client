@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# HaveItDiscussed
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![HaveItDiscussed-Client](https://socialify.git.ci/Yourstruggle11/HaveItDiscussed-Client/image?description=1&descriptionEditable=HaveItDiscussed%20is%20a%20social%20discussion%20forum%20for%20developers%20to%20discuss%20programming%20and%20software%20development.%20HaveItDiscussed%20is%20here%20to%20help%20developers%20solve%20problems%2C%20help%20you%20get%20answers%20to%20those%20questions%20that%20you%20can%E2%80%99t%20find%20anywhere%20else%2C%20and%20share%20code%20snippets%20and%20solutions%20with%20other%20members%20of%20the%20community.%20HaveItDiscussed%20is%20not%20just%20a%20site%20that%20answers%20questions.&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fhaveitdiscussed.netlify.app%2Ffavicon.ico&name=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Light)
 
-## Available Scripts
+<hr>
 
-In the project directory, you can run:
+##  ***HaveItDiscussed*** is a social discussion forum for developers to discuss programming and software development. HaveItDiscussed is here to help developers solve problems, help you get answers to those questions that you can’t find anywhere else, and share code snippets and solutions with other members of the community. HaveItDiscussed is not just a site that answers questions.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Preview
 
-### `npm test`
+# [SITE IS LIVE HERE](https://haveitdiscussed.netlify.app/ "HaveItdiscussed") 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="./src/assets/DEMO/demo (2).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (3).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (4).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (5).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (6).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (7).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (8).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (9).jpeg">
+<br />
+<br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Installation Guide
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+```js
+git clone https://github.com/Yourstruggle11/HaveItDiscussed-Client.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```js
+cd ./HaveItDiscussed-Client
+```
+```js
+npm i
+```
+```js
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Next
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Create `.env` file in the root of the project
+- copy `env var` from `.env-copy` and paste it into your `.env` file
+- value of `.env var` should be http://localhost:5000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## ***Your app all set***
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<hr />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+# ***Attention***
+###  Hello solver, if you are reading this meaning you are one of the few who got into the early release of HaveItDiscussed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### I am writing this so that you can understand this website more clearly if there is any doubt.
 
-### Analyzing the Bundle Size
+### It's an online forum, a great example of an online forum is StackOverflow I think you've heard the name. So you can ask qstn or if any kind of doubt just ask the community I believe someone will answer your question. And if you see someone asking a question, you already know the answer please answer them.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+# Note: HaveItDiscussed is still in beta so if you find any bugs feel free to open a PR.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ***Feel free to copy anything, it's all yours***
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Thank You, Made with ❤️ by Souvik Sen
