@@ -1,16 +1,11 @@
 import React from 'react'
 import CommentCard from '../../components/CommentCard/index.jsx'
 import Editor from '../../components/Editor.js'
-import Loader from '../../components/Loader/index.jsx'
 import QuestionArea from '../../components/QuestionArea/index.jsx'
 import { QuestionLogic } from './Question.logic'
 
 export default function Question() {
     const { body, setBody, data, allCommentsData, postComment } = QuestionLogic()
-    // if(loading){
-    //     return <Loader />
-         
-    //  }
     return (
         <>
             <div className="w-full min-h-[50rem] py-10 bg-[#f9fafb] dark:bg-MB pt-[2rem]">
