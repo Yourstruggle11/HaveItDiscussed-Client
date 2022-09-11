@@ -11,6 +11,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+ul, ol{
+    list-style: auto !important;
+    margin-left: 2.5rem;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
