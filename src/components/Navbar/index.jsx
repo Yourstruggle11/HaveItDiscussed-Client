@@ -42,7 +42,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div className="sticky top-0 z-[500000000000000000000]">
+            <div className="sticky top-0 z-[5555]">
                 <Popover className="relative bg-[#fff] dark:bg-MB">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6">
                         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
