@@ -59,6 +59,7 @@ export const likeDislikeCommentReducer = (
         case LIKE_DISLIKE_COMMENT_REQUEST:
             return {
                 ...state,
+                data: null,
                 loading: true
             }
         case LIKE_DISLIKE_COMMENT_SUCCESS:

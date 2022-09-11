@@ -58,13 +58,14 @@ export const QuestionLogic = () => {
                 draggable: true,
                 progress: undefined
             })
+            dispatch({ type: 'LIKE_DISLIKE_COMMENT_REQUEST', payload: false })
             dispatch(
                 getAllCommentsForSingleQusestion(
                     singleQuestionData && singleQuestionData.question._id
                 )
             )
         }
-    }, [likeDislike, dispatch, singleQuestionData])
+    }, [likeDislike, dispatch,singleQuestionData])
 
     const postComment = () => {
         if (userInfo) {
