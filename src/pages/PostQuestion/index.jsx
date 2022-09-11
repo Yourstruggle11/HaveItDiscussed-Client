@@ -1,5 +1,6 @@
 import React from 'react'
-import ReactQuill from 'react-quill'
+import Editor from '../../components/Editor.js'
+
 import 'react-quill/dist/quill.snow.css'
 import './style.css'
 import { PostQuestionLogic } from './PostQuestion.logic'
@@ -59,13 +60,20 @@ export default function PostQuestion() {
                     </div>
 
                     <div className="post-question-text-editor">
-                        <ReactQuill
+                            <Editor
+                            isComment={false}
+                            theme="snow"
+                            body={body}
+                            setBody={setBody}
+                            placeholder="Write Your Comment Here..."
+                            />
+                        {/* <ReactQuill
                             style={{ boxShadow: 'none' }}
                             theme="snow"
                             value={body}
                             onChange={(e) => setBody(e)}
                             placeholder="Lets write and start the discussion.."
-                        />
+                        /> */}
                     </div>
 
                     <div className="flex justify-center mt-10">

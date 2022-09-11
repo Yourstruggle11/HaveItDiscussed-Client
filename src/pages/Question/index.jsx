@@ -20,6 +20,7 @@ export default function Question() {
                     liked={data && data.isLiked}
                 />
                 <Editor
+                    isComment={true}
                     body={body}
                     setBody={setBody}
                     placeholder="Write Your Comment Here..."

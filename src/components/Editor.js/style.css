@@ -2,7 +2,7 @@
     box-shadow: 1px 1px 20px -14px;
 }
 .text-editor {
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
     margin-top: 5rem;
     border-radius: 20px;
@@ -57,12 +57,12 @@
     background: white;
     border-radius: 5px;
 }
-/* #toolbar{
-    top: 0px;
+#toolbar{
+    top: 4.5rem;
     position: sticky;
     z-index: 5000;
     background: #fff;
-  } */
+  }
 
 /* Set content for font-families */
 .ql-font-arial,
