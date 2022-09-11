@@ -75,11 +75,11 @@ npm start
 
 
 # ***Attention***
-###  Hello solver, if you are reading this meaning you are one of the few who got into the early release of HaveItDiscussed.
+###  Hello solver, if you're reading this, it means you were among the first to get the early release of HaveItDiscussed.
 
-### I am writing this so that you can understand this website more clearly if there is any doubt.
+### I'm writing this to help you understand this website better if you have any questions.
 
-### It's an online forum, a great example of an online forum is StackOverflow I think you've heard the name. So you can ask qstn or if any kind of doubt just ask the community I believe someone will answer your question. And if you see someone asking a question, you already know the answer please answer them.
+### It's an online forum; you've probably heard of StackOverflow. So you may ask question, or if you have any doubts, simply ask the community, and I'm sure someone will answer your query. And if you observe someone asking a question to which you already know the answer, kindly answer them.
 
 
 # Note: HaveItDiscussed is still in beta so if you find any bugs feel free to open a PR.
