@@ -44,9 +44,9 @@ export default function QuestionCard({
                     <div className="text-gray-900 dark:text-white font-bold text-xl mb-2">
                         {Question}
                     </div>
-                    <p className="text-gray-700 text-base dark:text-slate-300	">
+                    {/* <p className="text-gray-700 text-base dark:text-slate-300	">
                         {Desc.substring(0, 50) + '...'}
-                    </p>
+                    </p> */}
                 </div>
                 <div className="flex items-center">
                     <img
@@ -55,7 +55,7 @@ export default function QuestionCard({
                         alt="Avatar"
                     />
                     <div className="text-sm">
-                        <p className="text-gray-900 leading-none">{PostedBy}</p>
+                        <p className="text-gray-900 leading-none dark:text-white">{PostedBy}</p>
                         <p className="text-gray-600">{Date}</p>
                     </div>
                 </div>
