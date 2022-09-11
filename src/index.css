@@ -11,6 +11,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+a[target]{
+    text-decoration: underline;
+}
+
 ul, ol{
     list-style: auto !important;
     margin-left: 2.5rem;
