@@ -5,6 +5,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import { useSelector, useDispatch } from 'react-redux'
 import { logoutUser } from '../../redux/actions/userAction'
+import ProfileMenuPopUpWithMenuItems from './components/ProfileMenuPopupWithMenuItems'
 // import { getAllQuestions } from '../../redux/actions/questionAction'
 
 export default function Navbar() {
@@ -54,7 +55,7 @@ export default function Navbar() {
                                         <img
                                             src={logo}
                                             alt="logo"
-                                            className="w-[5rem] h-[3.5rem] "
+                                            className="w-[5rem] h-[5rem]"
                                         />
                                     </Link>
                                 </div>
@@ -120,28 +121,7 @@ export default function Navbar() {
                                         <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                                             {/* <item.icons className={item.className} onClick={item.function} /> */}
                                         </div>
-                                        <div
-                                            onClick={() => {
-                                                dispatch(logoutUser())
-                                            }}
-                                            className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer"
-                                        >
-                                            {/* <item.icons className={item.className} onClick={item.function} /> */}
-                                            Logout
-                                        </div>
-
-                                        <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
-                                            {/* <item.icons className={item.className} onClick={item.function} /> */}
-                                            <img
-                                                className="w-10 h-10 rounded-full"
-                                                src={
-                                                    data
-                                                        ? data.profilePic
-                                                        : 'https://flowbite.com/docs/images/people/profile-picture-5.jpg'
-                                                }
-                                                alt="Rounded avatar"
-                                            />
-                                        </div>
+                                        <ProfileMenuPopUpWithMenuItems />
                                         <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                                             {/* <item.icons className={item.className} onClick={item.function} /> */}
                                             <Link to="/question/new">
@@ -275,7 +255,7 @@ export default function Navbar() {
                                                     Logout
                                                 </div>
 
-                                                <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5">
+                                                <Link to="/profile" className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5">
                                                     {/* <item.icons className={item.className} onClick={item.function} /> */}
                                                     <img
                                                         className="w-10 h-10 rounded-full"
@@ -286,7 +266,7 @@ export default function Navbar() {
                                                         }
                                                         alt="Rounded avatar"
                                                     />
-                                                </div>
+                                                </Link>
                                                 <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer ">
                                                     {/* <item.icons className={item.className} onClick={item.function} /> */}
                                                     <Link to="/question/new">
