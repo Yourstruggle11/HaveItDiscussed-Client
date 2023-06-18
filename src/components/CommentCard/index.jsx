@@ -1,6 +1,7 @@
 import React from 'react'
 import InnerHTML from 'dangerously-set-html-content'
 import { CommentCardLogic } from './CommentCard.logic'
+import { Link } from 'react-router-dom'
 export default function CommentCard({
     Question,
     Comment,
@@ -9,7 +10,9 @@ export default function CommentCard({
     Date,
     authorImg,
     liked,
-    commentId
+    commentId,
+    userName,
+    userNo
 }) {
     const { userInfo, likeDislikeToggle } = CommentCardLogic(commentId)
     return (
@@ -25,11 +28,13 @@ export default function CommentCard({
 
                 <div className="w-full h-[3rem] flex itmes-center justify-between flex-col sm:flex-row">
                     <div className="h-full min-w-[15rem] bg-white flex items-center	 justify-center dark:bg-[#1e1e1e] dark:text-white">
-                        <img
-                            className="w-10 h-10 rounded-full mr-5"
-                            src={authorImg}
-                            alt="Author Pic"
-                        />
+                        <Link to={`/users/${userNo}/${userName}`}>
+                            <img
+                                className="w-10 h-10 rounded-full mr-5"
+                                src={authorImg}
+                                alt="Author Pic"
+                            />
+                        </Link>
                         <h1 className="mr-5">{PostedBy}</h1>
                         <div>
                             {liked.includes(userInfo && userInfo.id) ? (
@@ -65,11 +70,6 @@ export default function CommentCard({
                                     />
                                 </svg>
                             )}
-
-                            {/* 
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.904 0-.715.211-1.413.608-2.008L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
-                            </svg> */}
                         </div>
 
                         <h1 className="ml-5 font-bold text-2xl mb-5">{Likes}</h1>

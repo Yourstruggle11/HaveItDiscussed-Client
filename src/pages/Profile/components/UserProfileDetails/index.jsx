@@ -8,7 +8,7 @@ function UserProfileDetails({ userInfo }) {
                     alt="ProfilePic"
                     src={
                         userInfo?.profilePic ||
-                        'https://demos.creative-tim.com/notus-js/assets/img/team-2-800x800.jpg'
+                        process.env.REACT_APP_DUMMY_PROFILE_IMAGE
                     }
                     className="shadow-xl rounded-full h-[150px] align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
                 />

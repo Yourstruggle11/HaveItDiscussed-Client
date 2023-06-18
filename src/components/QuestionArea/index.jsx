@@ -1,6 +1,7 @@
 import React from 'react'
 import { QuestionAreaLogic } from './QuestionArea.logic'
 import InnerHTML from 'dangerously-set-html-content'
+import { Link } from 'react-router-dom'
 export default function QuestionArea({
     Question,
     Desc,
@@ -10,7 +11,9 @@ export default function QuestionArea({
     Date,
     isComment,
     authorImg,
-    liked
+    liked,
+    userName,
+    userNo,
 }) {
     const { likeDislikeToggle, userInfo } = QuestionAreaLogic()
     return (
@@ -36,11 +39,13 @@ export default function QuestionArea({
 
                 <div className="w-full h-[3rem] flex itmes-center justify-between flex-col sm:flex-row dark:bg-[#1e1e1e] dark:text-white">
                     <div className="h-full min-w-[15rem] bg-white flex items-center	 justify-center dark:bg-[#1e1e1e] dark:text-white">
+                        <Link to={`/users/${userNo}/${userName}`}>
                         <img
                             className="w-10 h-10 rounded-full mr-5"
                             src={authorImg}
                             alt="Author Pictue"
                         />
+                        </Link>
                         <h1 className="mr-5">{PostedBy}</h1>
                         <div>
                             {userInfo && liked ? (

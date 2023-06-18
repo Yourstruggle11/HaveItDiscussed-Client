@@ -37,14 +37,7 @@ export default function Navigator() {
                             </UserProtection>
                         }
                     />
-                    <Route
-                        path="/profile"
-                        element={
-                            <UserProtection>
-                                <Profile />
-                            </UserProtection>
-                        }
-                    />
+                    <Route path="/users/:userNo/:userName" element={<Profile />} />
                 </Routes>
             </BrowserRouter>
         </>

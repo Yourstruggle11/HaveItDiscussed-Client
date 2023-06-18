@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import ProfileIcon from '../CustomIcon/ProfileIcon';
 import LogoutIcon from '../CustomIcon/LogoutIcon';
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const NavbarLogic = () => {
     const [profileMenuOpen, setProfileMenuOpen] = useState(false)
-
+    const { userInfo: data } = useSelector((state) => state.userSignin)
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -22,7 +22,7 @@ export const NavbarLogic = () => {
         {
             title: 'Profile',
             icon: <ProfileIcon />,
-            handleClick: () => navigate('/profile')
+            handleClick: () => navigate(`/users/${data?.userNo}/${data?.userName}`)
         },
         {
             title: 'Logout',

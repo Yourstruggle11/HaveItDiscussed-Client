@@ -255,7 +255,7 @@ export default function Navbar() {
                                                     Logout
                                                 </div>
 
-                                                <Link to="/profile" className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5">
+                                                <Link to={`/users/${data?.userNo}/${data?.userName}`} className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5">
                                                     {/* <item.icons className={item.className} onClick={item.function} /> */}
                                                     <img
                                                         className="w-10 h-10 rounded-full"
