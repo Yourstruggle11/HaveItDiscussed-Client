@@ -90,7 +90,11 @@ function UserDetailsSection() {
                     <div className="px-6">
                         <div className="flex flex-wrap justify-center">
                             <UserProfileDetails userInfo={data?.data} />
-                            <Connection />
+                            {!isCurrentUser && userInfo ? (
+                                <Connection />
+                            ) : (
+                                <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"></div>
+                            )}
                             <UserStats
                                 friendCount={0}
                                 likeCount={data?.totalLikes}
