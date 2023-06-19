@@ -18,7 +18,7 @@ function UserDetailsSection() {
     const dispatch = useDispatch()
     // get params userName and userNo useing useParams
     const { userName, userNo } = useParams()
-    
+
     // check if the current user is the same as the user whose profile is being viewed
     const isCurrentUser = userInfo?.userNo === parseInt(userNo)
 
@@ -40,6 +40,7 @@ function UserDetailsSection() {
 
     useEffect(() => {
         dispatch(getUserProfileDetails(userName, userNo))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userName, userNo])
 
     const [userProfileData, setUserProfileData] = useState(defaultUserProfileData)
@@ -48,14 +49,14 @@ function UserDetailsSection() {
         if (data) {
             setUserProfileData((prevData) => ({
                 ...prevData,
-                name: data?.data?.name || prevData.name,
-                location: data?.data?.location || prevData.location,
-                position: data?.data?.position || prevData.position,
-                university: data?.data?.university || prevData.university,
-                bio: data?.data?.bio || prevData.bio
+                name: data?.data?.name || defaultUserProfileData.name,
+                location: data?.data?.location || defaultUserProfileData.location,
+                position: data?.data?.position || defaultUserProfileData.position,
+                university: data?.data?.university || defaultUserProfileData.university,
+                bio: data?.data?.bio || defaultUserProfileData.bio
             }))
         }
-    }, [data])
+    }, [data, userName, userNo])
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
