@@ -8,7 +8,10 @@ import UserInformation from '../UserInformation'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getUserProfileDetails, updateUserProfile } from '../../../../redux/actions/userActivityAction'
+import {
+    getUserProfileDetails,
+    updateUserProfile
+} from '../../../../redux/actions/userActivityAction'
 import Loader from '../../../../components/Loader'
 
 function UserDetailsSection() {
@@ -88,7 +91,11 @@ function UserDetailsSection() {
                         <div className="flex flex-wrap justify-center">
                             <UserProfileDetails userInfo={data?.data} />
                             <Connection />
-                            <UserStats />
+                            <UserStats
+                                friendCount={0}
+                                likeCount={data?.totalLikes}
+                                commentCount={data?.totalComments}
+                            />
                         </div>
                         <UserInformation
                             isCurrentUser={isCurrentUser}
