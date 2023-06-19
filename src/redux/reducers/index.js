@@ -12,7 +12,7 @@ import {
     likeDislikeQuestionReducer
 } from './questionReducer'
 import { userSigninReducer } from './userReducer'
-import { getUserProfileDetailsReducer } from './userActivityReducer'
+import { getUserProfileDetailsReducer, updateUserProfileReducer } from './userActivityReducer'
 
 const rootReducer = combineReducers({
     userSignin: userSigninReducer,
@@ -24,7 +24,8 @@ const rootReducer = combineReducers({
     postNewComment: postNewCommentReducer,
     createNewQuestion: createNewQuestionReducer,
     darkMode: darkModeReducer,
-    getUserProfileDetails: getUserProfileDetailsReducer
+    getUserProfileDetails: getUserProfileDetailsReducer,
+    updateUserProfile: updateUserProfileReducer
 })
 
 export default rootReducer
