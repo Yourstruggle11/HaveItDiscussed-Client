@@ -91,7 +91,7 @@ function UserDetailsSection() {
                         <div className="flex flex-wrap justify-center">
                             <UserProfileDetails userInfo={data?.data} />
                             {!isCurrentUser && userInfo ? (
-                                <Connection />
+                                <Connection isFriend={data?.data?.isFriend} isPending={data?.data?.isPending} isFriendRequestReceived={data?.data?.isFriendRequestReceived} />
                             ) : (
                                 <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"></div>
                             )}
