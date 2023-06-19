@@ -8,7 +8,7 @@ import UserInformation from '../UserInformation'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getUserProfileDetails } from '../../../../redux/actions/userActivityAction'
+import { getUserProfileDetails, updateUserProfile } from '../../../../redux/actions/userActivityAction'
 import Loader from '../../../../components/Loader'
 
 function UserDetailsSection() {
@@ -52,15 +52,28 @@ function UserDetailsSection() {
                 name: data?.data?.name || defaultUserProfileData.name,
                 location: data?.data?.location || defaultUserProfileData.location,
                 position: data?.data?.position || defaultUserProfileData.position,
-                university: data?.data?.university || defaultUserProfileData.university,
+                university:
+                    data?.data?.university || defaultUserProfileData.university,
                 bio: data?.data?.bio || defaultUserProfileData.bio
             }))
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data, userName, userNo])
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
         setUserProfileData((prev) => ({ ...prev, [name]: value }))
+    }
+
+    const handleSave = () => {
+        dispatch(
+            updateUserProfile({
+                location: userProfileData.location,
+                position: userProfileData.position,
+                university: userProfileData.university,
+                bio: userProfileData.bio
+            })
+        )
     }
 
     if (loading) {
@@ -83,6 +96,7 @@ function UserDetailsSection() {
                             setIsEditing={setIsEditing}
                             handleInputChange={handleInputChange}
                             userProfileData={userProfileData}
+                            handleSave={handleSave}
                         />
                         <AboutSection
                             bio={userProfileData.bio}

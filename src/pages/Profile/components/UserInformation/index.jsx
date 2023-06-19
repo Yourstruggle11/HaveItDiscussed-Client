@@ -9,11 +9,9 @@ function UserInformation({
     isEditing,
     setIsEditing,
     handleInputChange,
-    userProfileData
+    userProfileData,
+    handleSave
 }) {
-    const handleSave = () => {
-        // Perform save action here, e.g., update the data in the database
-    }
 
     return (
         <div className="text-center mt-12">
