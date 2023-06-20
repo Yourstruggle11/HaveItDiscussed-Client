@@ -96,7 +96,7 @@ function UserDetailsSection() {
                                 <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"></div>
                             )}
                             <UserStats
-                                friendCount={0}
+                                friendCount={data?.data?.friendList?.length}
                                 likeCount={data?.totalLikes}
                                 commentCount={data?.totalComments}
                             />
