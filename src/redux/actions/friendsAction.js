@@ -8,7 +8,10 @@ import {
     CANCEL_FRIEND_FAILED,
     ACCEPT_FRIEND_REQUEST,
     ACCEPT_FRIEND_SUCCESS,
-    ACCEPT_FRIEND_FAILED
+    ACCEPT_FRIEND_FAILED,
+    REMOVE_FRIEND_REQUEST,
+    REMOVE_FRIEND_SUCCESS,
+    REMOVE_FRIEND_FAILED
 } from '../constants/friendsConstants'
 import { ConfigFunction } from '../../utils/config'
 import { getUserProfileDetails } from './userActivityAction'
@@ -112,6 +115,41 @@ export const acceptFriendRequest =
         } catch (error) {
             dispatch({
                 type: ACCEPT_FRIEND_FAILED,
+                payload:
+                    error.response && error.response.data.message
+                        ? error.response.data.message
+                        : error.message
+            })
+        }
+    }
+
+// Remove a friend from friend list
+export const removeFriend =
+    (friendId, userName, userNo) => async (dispatch, getState) => {
+        try {
+            dispatch({
+                type: REMOVE_FRIEND_REQUEST
+            })
+            const {
+                userSignin: { userInfo }
+            } = getState()
+            const config = ConfigFunction(userInfo)
+
+            const { data } = await axios.post(
+                `${API}/private/friends/remove-friend`,
+                { friendId },
+                config
+            )
+            if (data?.success) {
+                dispatch(getUserProfileDetails(userName, userNo))
+            }
+            dispatch({
+                type: REMOVE_FRIEND_SUCCESS,
+                payload: data
+            })
+        } catch (error) {
+            dispatch({
+                type: REMOVE_FRIEND_FAILED,
                 payload:
                     error.response && error.response.data.message
                         ? error.response.data.message

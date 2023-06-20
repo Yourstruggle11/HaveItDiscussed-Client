@@ -8,7 +8,10 @@ import {
     CANCEL_FRIEND_FAILED,
     ACCEPT_FRIEND_REQUEST,
     ACCEPT_FRIEND_SUCCESS,
-    ACCEPT_FRIEND_FAILED
+    ACCEPT_FRIEND_FAILED,
+    REMOVE_FRIEND_REQUEST,
+    REMOVE_FRIEND_SUCCESS,
+    REMOVE_FRIEND_FAILED
 } from '../constants/friendsConstants'
 
 ///    ADD FRIEND    ///
@@ -128,6 +131,50 @@ export const acceptFriendRequestReducer = (
                 data: action.payload
             }
         case ACCEPT_FRIEND_FAILED:
+            toast.error(action.payload, {
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined
+            })
+            return {
+                ...state,
+                loading: false,
+                data: null,
+                error: action.payload
+            }
+        default:
+            return state
+    }
+}
+///    REMOVE A FRIEND FROM FRIENDS LIST   ///
+export const removeFriendReducer = (
+    state = {
+        loading: false,
+        data: null,
+        isAuthenticated: false,
+        error: null
+    },
+    action
+) => {
+    switch (action.type) {
+        case REMOVE_FRIEND_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+        case REMOVE_FRIEND_SUCCESS:
+             // show toast message saying your details have been added successfully
+             toast.success(action.payload?.message)
+            return {
+                ...state,
+                loading: false,
+                isAuthenticated: true,
+                data: action.payload
+            }
+        case REMOVE_FRIEND_FAILED:
             toast.error(action.payload, {
                 autoClose: 5000,
                 hideProgressBar: false,

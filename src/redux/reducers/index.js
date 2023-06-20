@@ -12,8 +12,16 @@ import {
     likeDislikeQuestionReducer
 } from './questionReducer'
 import { userSigninReducer } from './userReducer'
-import { getUserProfileDetailsReducer, updateUserProfileReducer } from './userActivityReducer'
-import { acceptFriendRequestReducer, addFriendReducer, cancelFriendRequestReducer } from './friendsReducer'
+import {
+    getUserProfileDetailsReducer,
+    updateUserProfileReducer
+} from './userActivityReducer'
+import {
+    acceptFriendRequestReducer,
+    addFriendReducer,
+    cancelFriendRequestReducer,
+    removeFriendReducer
+} from './friendsReducer'
 
 const rootReducer = combineReducers({
     userSignin: userSigninReducer,
@@ -29,7 +37,8 @@ const rootReducer = combineReducers({
     updateUserProfile: updateUserProfileReducer,
     addFriend: addFriendReducer,
     cancelFriendRequest: cancelFriendRequestReducer,
-    acceptFriendRequest: acceptFriendRequestReducer
+    acceptFriendRequest: acceptFriendRequestReducer,
+    removeFriend: removeFriendReducer
 })
 
 export default rootReducer
