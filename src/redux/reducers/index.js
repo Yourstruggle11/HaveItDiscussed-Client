@@ -13,7 +13,7 @@ import {
 } from './questionReducer'
 import { userSigninReducer } from './userReducer'
 import { getUserProfileDetailsReducer, updateUserProfileReducer } from './userActivityReducer'
-import { addFriendReducer } from './friendsReducer'
+import { addFriendReducer, cancelFriendRequestReducer } from './friendsReducer'
 
 const rootReducer = combineReducers({
     userSignin: userSigninReducer,
@@ -27,7 +27,8 @@ const rootReducer = combineReducers({
     darkMode: darkModeReducer,
     getUserProfileDetails: getUserProfileDetailsReducer,
     updateUserProfile: updateUserProfileReducer,
-    addFriend: addFriendReducer
+    addFriend: addFriendReducer,
+    cancelFriendRequest: cancelFriendRequestReducer
 })
 
 export default rootReducer
