@@ -18,6 +18,8 @@ export default function Question() {
                     isComment={false}
                     authorImg={data && data.question.postedBy.profilePic}
                     liked={data && data.isLiked}
+                    userName={data && data.question.postedBy.userName}
+                    userNo={data && data.question.postedBy.userNo}
                 />
                 <Editor
                     isComment={true}
@@ -45,6 +47,8 @@ export default function Question() {
                                 authorImg={comment.commentedBy.profilePic}
                                 liked={comment.likedBy}
                                 commentId={comment._id}
+                                userName={comment.commentedBy.userName}
+                                userNo={comment.commentedBy.userNo}
                             />
                         )
                     })}
