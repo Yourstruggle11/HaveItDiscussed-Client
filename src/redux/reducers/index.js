@@ -13,7 +13,7 @@ import {
 } from './questionReducer'
 import { userSigninReducer } from './userReducer'
 import { getUserProfileDetailsReducer, updateUserProfileReducer } from './userActivityReducer'
-import { addFriendReducer, cancelFriendRequestReducer } from './friendsReducer'
+import { acceptFriendRequestReducer, addFriendReducer, cancelFriendRequestReducer } from './friendsReducer'
 
 const rootReducer = combineReducers({
     userSignin: userSigninReducer,
@@ -28,7 +28,8 @@ const rootReducer = combineReducers({
     getUserProfileDetails: getUserProfileDetailsReducer,
     updateUserProfile: updateUserProfileReducer,
     addFriend: addFriendReducer,
-    cancelFriendRequest: cancelFriendRequestReducer
+    cancelFriendRequest: cancelFriendRequestReducer,
+    acceptFriendRequest: acceptFriendRequestReducer
 })
 
 export default rootReducer
