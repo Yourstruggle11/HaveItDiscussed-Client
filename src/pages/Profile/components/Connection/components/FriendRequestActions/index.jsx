@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { acceptFriendRequest } from '../../../../../../redux/actions/friendsAction'
+import { acceptFriendRequest, cancelFriendRequest } from '../../../../../../redux/actions/friendsAction'
 
 export const FriendRequestActions = () => {
     const { userName, userNo } = useParams()
@@ -18,6 +18,9 @@ export const FriendRequestActions = () => {
                 Accept Request
             </button>
             <button
+                onClick={() =>
+                    dispatch(cancelFriendRequest(data?.data?._id, userName, userNo))
+                }
                 className="bg-red-500 active:bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2 rounded outline-none focus:outline-none ease-linear transition-all duration-150"
                 type="button"
             >
