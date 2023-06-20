@@ -85,7 +85,7 @@ function UserDetailsSection() {
 
     return (
         <section className="relative py-16 bg-[#94a3b85c] dark:bg-MB dark:text-white">
-            <div className="container mx-auto px-36">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-36">
                 <div className="relative flex flex-col min-w-0 break-words bg-white dark:bg-[#1e1e1e] w-full mb-6 shadow-xl rounded-lg -mt-64">
                     <div className="px-6">
                         <div className="flex flex-wrap justify-center">
@@ -100,7 +100,7 @@ function UserDetailsSection() {
                                     recipientId={data?.data?._id}
                                 />
                             ) : (
-                                <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"></div>
+                                <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center mb-24"></div>
                             )}
                             <UserStats
                                 friendCount={data?.data?.friendList?.length}
