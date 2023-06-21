@@ -8,6 +8,7 @@ import PostQuestion from './pages/PostQuestion'
 import Login from './pages/Login'
 import { UserProtection } from './Layout/RouteProtection'
 import Profile from './pages/Profile'
+import Notification from './pages/Notification'
 
 export default function Navigator() {
     return (
@@ -34,6 +35,14 @@ export default function Navigator() {
                         element={
                             <UserProtection>
                                 <PostQuestion />
+                            </UserProtection>
+                        }
+                    />
+                    <Route
+                        path="/notifications"
+                        element={
+                            <UserProtection>
+                                <Notification />
                             </UserProtection>
                         }
                     />
