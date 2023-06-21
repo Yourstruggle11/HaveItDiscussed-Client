@@ -4,6 +4,10 @@ module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         extend: {
+            backgroundImage: {
+                'notificationBackground': "url('assets/notification/darkBackground.png')",
+                'notificationBackgroundDark': "url('assets/notification/whiteBackground.png')",
+              },
             colors: {
                 blue: {
                     50: '#1D4ED8',
