@@ -6,6 +6,8 @@ import logo from '../../assets/logo.png'
 import { useSelector, useDispatch } from 'react-redux'
 import { logoutUser } from '../../redux/actions/userAction'
 import ProfileMenuPopUpWithMenuItems from './components/ProfileMenuPopupWithMenuItems'
+import NotificationBell from '../NotificationBell'
+import BellIcon from '../CustomIcon/BellIcon'
 // import { getAllQuestions } from '../../redux/actions/questionAction'
 
 export default function Navbar() {
@@ -48,7 +50,7 @@ export default function Navbar() {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6">
                         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
                             {/* Heading / Logo */}
-                            <div className="flex justify-start lg:w-0 lg:flex-1 h-[40px]">
+                            <div className="flex justify-start lg:w-0 lg:flex-1 h-[48px]">
                                 <div className="cursor-pointer">
                                     <span className="sr-only">Logo</span>
                                     <Link to="/">
@@ -72,7 +74,7 @@ export default function Navbar() {
                             </div>
                             {/*-------------- Nav Items --------------------*/}
 
-                            <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                            <div className="min-w-[60%] hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                                 {/* Search bar */}
                                 <div className="xl:w-[10.5rem] mr-5">
                                     <label className="relative block">
@@ -122,6 +124,9 @@ export default function Navbar() {
                                             {/* <item.icons className={item.className} onClick={item.function} /> */}
                                         </div>
                                         <ProfileMenuPopUpWithMenuItems />
+                                        <div className="w-10 h-10 mx-4">
+                                            <NotificationBell />
+                                        </div>
                                         <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                                             {/* <item.icons className={item.className} onClick={item.function} /> */}
                                             <Link to="/question/new">
@@ -144,15 +149,6 @@ export default function Navbar() {
                                         {/* </Link> */}
                                     </React.Fragment>
                                 )}
-
-                                {/* commenting login for future use 
-             <a
-                href="#"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-              >
-                Login
-              </a>
-             */}
                             </div>
                             {/*-------------- Nav Items --------------------*/}
                         </div>
@@ -255,7 +251,10 @@ export default function Navbar() {
                                                     Logout
                                                 </div>
 
-                                                <Link to={`/users/${data?.userNo}/${data?.userName}`} className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5">
+                                                <Link
+                                                    to={`/users/${data?.userNo}/${data?.userName}`}
+                                                    className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5"
+                                                >
                                                     {/* <item.icons className={item.className} onClick={item.function} /> */}
                                                     <img
                                                         className="w-10 h-10 rounded-full"
@@ -266,6 +265,22 @@ export default function Navbar() {
                                                         }
                                                         alt="Rounded avatar"
                                                     />
+                                                </Link>
+                                                <Link
+                                                    to="notifications"
+                                                    className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer mb-5"
+                                                >
+                                                    <div className="relative">
+                                                        <BellIcon className="h-6 w-6" />
+                                                        {15 >
+                                                            0 && (
+                                                            <span className="absolute top-0 right-0 -mt-1 -mr-1 bg-red-500 text-white rounded-full px-2 py-1 text-xs">
+                                                                {
+                                                                    15
+                                                                }
+                                                            </span>
+                                                        )}
+                                                    </div>
                                                 </Link>
                                                 <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer ">
                                                     {/* <item.icons className={item.className} onClick={item.function} /> */}
@@ -278,12 +293,13 @@ export default function Navbar() {
                                             </React.Fragment>
                                         ) : (
                                             <React.Fragment>
-                                                    <div 
+                                                <div
                                                     onClick={redirectHandler}
-                                                    className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
-                                                        {/* <item.icons className={item.className} onClick={item.function} /> */}
-                                                        Login
-                                                    </div>
+                                                    className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer"
+                                                >
+                                                    {/* <item.icons className={item.className} onClick={item.function} /> */}
+                                                    Login
+                                                </div>
                                             </React.Fragment>
                                         )}
                                     </div>
