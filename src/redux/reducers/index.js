@@ -22,6 +22,7 @@ import {
     cancelFriendRequestReducer,
     removeFriendReducer
 } from './friendsReducer'
+import { getAllNotificationsReducer } from './notificationsReducer'
 
 const rootReducer = combineReducers({
     userSignin: userSigninReducer,
@@ -38,7 +39,8 @@ const rootReducer = combineReducers({
     addFriend: addFriendReducer,
     cancelFriendRequest: cancelFriendRequestReducer,
     acceptFriendRequest: acceptFriendRequestReducer,
-    removeFriend: removeFriendReducer
+    removeFriend: removeFriendReducer,
+    getAllNotifications: getAllNotificationsReducer
 })
 
 export default rootReducer
