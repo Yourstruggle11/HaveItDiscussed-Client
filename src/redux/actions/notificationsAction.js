@@ -5,7 +5,10 @@ import {
     GET_ALL_NOTIFICATION_FAILED,
     GET_LAST_TEN_NOTIFICATION_REQUEST,
     GET_LAST_TEN_NOTIFICATION_SUCCESS,
-    GET_LAST_TEN_NOTIFICATION_FAILED
+    GET_LAST_TEN_NOTIFICATION_FAILED,
+    MARK_NOTIFICATION_AS_READ_REQUEST,
+    MARK_NOTIFICATION_AS_READ_SUCCESS,
+    MARK_NOTIFICATION_AS_READ_FAILED
 } from '../constants/notificationsConstants'
 import { ConfigFunction } from '../../utils/config'
 
@@ -70,3 +73,43 @@ export const getLastTenUnreadNotification = () => async (dispatch, getState) => 
         })
     }
 }
+
+// mark single or multiple notifications as read
+export const markNotificationAsRead =
+    (markAll, notificationId) => async (dispatch, getState) => {
+        try {
+            dispatch({
+                type: MARK_NOTIFICATION_AS_READ_REQUEST
+            })
+            const {
+                userSignin: { userInfo }
+            } = getState()
+            const config = ConfigFunction(userInfo)
+
+            const body = {
+                markAll,
+                notificationId
+            }
+
+            const { data } = await axios.put(
+                `${API}/private/notifications/mark-as-read`,
+                body,
+                config
+            )
+            if (data?.success) {
+                dispatch(getLastTenUnreadNotification())
+            }
+            dispatch({
+                type: MARK_NOTIFICATION_AS_READ_SUCCESS,
+                payload: data
+            })
+        } catch (error) {
+            dispatch({
+                type: MARK_NOTIFICATION_AS_READ_FAILED,
+                payload:
+                    error.response && error.response.data.message
+                        ? error.response.data.message
+                        : error.message
+            })
+        }
+    }
