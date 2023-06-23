@@ -9,7 +9,7 @@ export const NotificationPopover = ({ notifications, markAsRead }) => {
             <div className="py-1">
                 {notifications.map((notification) => (
                     <NotificationItem
-                        key={notification.id}
+                        key={notification._id}
                         notification={notification}
                         markAsRead={markAsRead}
                     />
@@ -25,7 +25,7 @@ export const NotificationPopover = ({ notifications, markAsRead }) => {
                 {true && (
                     <button
                         className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500"
-                        onClick={() => markAsRead(notification.id)}
+                        onClick={() => markAsRead(notification._id)}
                     >
                         Mark as Read
                     </button>
@@ -34,7 +34,7 @@ export const NotificationPopover = ({ notifications, markAsRead }) => {
         )
     }
     return (
-        <div className="absolute right-0 mt-2 w-[300px] rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 dark:divide-gray-600">
+        <div className="absolute right-0 mt-2 w-[450px] rounded-md shadow-lg bg-white dark:bg-MB ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 dark:divide-gray-600">
             <div className="px-4 py-3">
                 <p className="text-sm leading-5 text-gray-900 dark:text-gray-100">
                     Recent Notifications
@@ -45,7 +45,7 @@ export const NotificationPopover = ({ notifications, markAsRead }) => {
             </div>
             {notifications.length > 0 ? (
                 <NotificationList
-                    notifications={notifications.slice(0, 10)}
+                    notifications={notifications}
                     markAsRead={markAsRead}
                 />
             ) : (
