@@ -4,6 +4,7 @@ import Loader from '../../components/Loader'
 import Pagination from '../../components/Pagination'
 import QuestionCard from '../../components/QuestionCard'
 import { HomeLogic } from './Home.logic'
+import { convertTime } from '../../utils/helper'
 
 export default function Home() {
     const { pageRerender, data, page, limit,loading } = HomeLogic()
@@ -33,9 +34,9 @@ export default function Home() {
                                         authorImage={
                                             item.postedBy && item.postedBy.profilePic
                                         }
-                                        Date={new Date(
+                                        Date={convertTime(
                                             item.createdAt
-                                        ).toLocaleString()}
+                                        )}
                                     />
                                 </Link>
                             )

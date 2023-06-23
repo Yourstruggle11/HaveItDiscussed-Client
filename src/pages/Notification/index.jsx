@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png'
 import EmptyNotigication from './components/EmptyNotification'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllNotifications } from '../../redux/actions/notificationsAction'
-import { converTime } from '../../utils/helper'
+import { convertTime } from '../../utils/helper'
 import Actions from './components/Actions'
 
 export default function Notification() {
@@ -42,7 +42,7 @@ export default function Notification() {
                                                 {notification?.message}
                                             </p>
                                             <p className="text-xs text-gray-400">
-                                                {converTime(notification?.createdAt)}
+                                                {convertTime(notification?.createdAt)}
                                             </p>
                                         </div>
                                         <Actions
