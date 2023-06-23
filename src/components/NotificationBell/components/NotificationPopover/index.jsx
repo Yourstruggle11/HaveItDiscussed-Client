@@ -1,9 +1,7 @@
-import { Link } from 'react-router-dom';
-import EmptyNotification from '../../../../pages/Notification/components/EmptyNotification';
-
+import { Link } from 'react-router-dom'
+import EmptyNotification from '../../../../pages/Notification/components/EmptyNotification'
 
 export const NotificationPopover = ({ notifications, markAsRead }) => {
-
     const NotificationList = ({ notifications, markAsRead }) => {
         return (
             <div className="py-1">
@@ -25,7 +23,7 @@ export const NotificationPopover = ({ notifications, markAsRead }) => {
                 {true && (
                     <button
                         className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500"
-                        onClick={() => markAsRead(notification._id)}
+                        onClick={() => markAsRead(false, notification._id)}
                     >
                         Mark as Read
                     </button>
@@ -39,7 +37,10 @@ export const NotificationPopover = ({ notifications, markAsRead }) => {
                 <p className="text-sm leading-5 text-gray-900 dark:text-gray-100">
                     Recent Notifications
                 </p>
-                <button className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500">
+                <button
+                    onClick={() => markAsRead(true, null)}
+                    className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500"
+                >
                     Mark all notifications as Read
                 </button>
             </div>
