@@ -4,6 +4,7 @@ import Editor from '../../components/Editor.js'
 import QuestionArea from '../../components/QuestionArea/index.jsx'
 import { QuestionLogic } from './Question.logic'
 import { ButtonDefinations } from '../../components/ButtonDefinations/index.jsx'
+import { convertTime } from '../../utils/helper.js'
 
 export default function Question() {
     const { body, setBody, data, allCommentsData, postComment } = QuestionLogic()
@@ -14,7 +15,7 @@ export default function Question() {
                     Question={data && data.question.questionTitle}
                     Likes={data && data.question.likeCount}
                     PostedBy={data && data.question.postedBy.name}
-                    Date={new Date(data && data.question.createdAt).toLocaleString()}
+                    Date={convertTime(data && data.question.createdAt)}
                     Desc={data && data.question.questionBody}
                     isComment={false}
                     authorImg={data && data.question.postedBy.profilePic}
@@ -44,7 +45,7 @@ export default function Question() {
                                 Comment={comment.comment}
                                 Likes={comment.likeCount}
                                 PostedBy={comment.commentedBy.name}
-                                Date={new Date(comment.createdAt).toLocaleString()}
+                                Date={convertTime(comment.createdAt)}
                                 authorImg={comment.commentedBy.profilePic}
                                 liked={comment.likedBy}
                                 commentId={comment._id}

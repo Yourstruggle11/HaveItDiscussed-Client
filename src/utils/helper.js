@@ -1,4 +1,4 @@
-export const converTime = (time) => {
+export const convertTime = (time) => {
     const date = new Date(time)
     const month = date.toLocaleString('default', { month: 'short' })
     const day = date.getDate()
