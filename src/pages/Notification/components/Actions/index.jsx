@@ -1,30 +1,34 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ButtonDefinations } from '../../../../components/ButtonDefinations'
 
-export default function Actions({type, actionURL}) {
+export default function Actions({ type, actionURL }) {
     const generateActionText = (type) => {
         switch (type) {
             case 1:
-                return 'Go and find out!'
+                return 'Discover it now!'
             case 2:
-                return 'Yeah, go chat!'
+                return 'Engage in conversation!'
             case 3:
-                return 'GO and Reply now'
+                return 'Respond promptly!'
             case 4:
-                return 'Sounds amazing!'
+                return 'Sounds incredible!'
             case 5:
-                return 'Sounds amazing!'
+                return 'Seems fantastic!'
             case 6:
-                return 'Go and check it out!'
+                return 'Explore it further!'
             default:
                 return 'View'
         }
     }
     return (
-        <Link to={actionURL} className='hidden md:block'>
-            <button className="text-xs text-white bg-blue-500 hover:bg-blue-600 transition-colors duration-300 rounded px-3 py-1">
-                {generateActionText(type)}
-            </button>
+        <Link
+            to={actionURL}
+            className="hidden md:block relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-blue-500 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
+        >
+
+                <ButtonDefinations.ActionButton>{generateActionText(type)}</ButtonDefinations.ActionButton>
         </Link>
+        // </Link>
     )
 }

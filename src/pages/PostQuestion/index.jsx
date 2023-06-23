@@ -5,6 +5,7 @@ import 'react-quill/dist/quill.snow.css'
 import './style.css'
 import { PostQuestionLogic } from './PostQuestion.logic'
 import Loader from '../../components/Loader'
+import { ButtonDefinations } from '../../components/ButtonDefinations/index.jsx'
 
 export default function PostQuestion() {
     const {
@@ -20,10 +21,9 @@ export default function PostQuestion() {
         handleSubmit,
         loading
     } = PostQuestionLogic()
-    if(loading){
+    if (loading) {
         return <Loader />
-         
-     }
+    }
     return (
         <>
             <div className="w-full min-h-[50rem] py-10 bg-[#f9fafb] pt-[2rem] dark:bg-MB">
@@ -60,13 +60,13 @@ export default function PostQuestion() {
                     </div>
 
                     <div className="post-question-text-editor">
-                            <Editor
+                        <Editor
                             isComment={false}
                             theme="snow"
                             body={body}
                             setBody={setBody}
                             placeholder="Write Your Comment Here..."
-                            />
+                        />
                         {/* <ReactQuill
                             style={{ boxShadow: 'none' }}
                             theme="snow"
@@ -128,12 +128,11 @@ export default function PostQuestion() {
                     </div>
 
                     <div className="w-4/5 h-5 my-10">
-                        <button
-                            onClick={handleSubmit}
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                        >
-                            Start Discussion
-                        </button>
+                        <span onClick={handleSubmit}>
+                            <ButtonDefinations.SubmitButton>
+                                Start Discussion
+                            </ButtonDefinations.SubmitButton>
+                        </span>
                     </div>
                 </div>
             </div>

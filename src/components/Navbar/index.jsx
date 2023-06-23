@@ -8,6 +8,7 @@ import { logoutUser } from '../../redux/actions/userAction'
 import ProfileMenuPopUpWithMenuItems from './components/ProfileMenuPopupWithMenuItems'
 import NotificationBell from '../NotificationBell'
 import BellIcon from '../CustomIcon/BellIcon'
+import { ButtonDefinations } from '../ButtonDefinations'
 // import { getAllQuestions } from '../../redux/actions/questionAction'
 
 export default function Navbar() {
@@ -130,9 +131,9 @@ export default function Navbar() {
                                         <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer">
                                             {/* <item.icons className={item.className} onClick={item.function} /> */}
                                             <Link to="/question/new">
-                                                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                                    Ask The Community
-                                                </button>
+                                                <ButtonDefinations.EngageButton>
+                                                    Engage with Community
+                                                </ButtonDefinations.EngageButton>
                                             </Link>
                                         </div>
                                     </React.Fragment>
@@ -272,12 +273,9 @@ export default function Navbar() {
                                                 >
                                                     <div className="relative">
                                                         <BellIcon className="h-6 w-6" />
-                                                        {15 >
-                                                            0 && (
+                                                        {15 > 0 && (
                                                             <span className="absolute top-0 right-0 -mt-1 -mr-1 bg-red-500 text-white rounded-full px-2 py-1 text-xs">
-                                                                {
-                                                                    15
-                                                                }
+                                                                {15}
                                                             </span>
                                                         )}
                                                     </div>
@@ -285,9 +283,9 @@ export default function Navbar() {
                                                 <div className="whitespace-nowrap mx-4 text-base font-medium text-gray-500 hover:text-[gray] cursor-pointer ">
                                                     {/* <item.icons className={item.className} onClick={item.function} /> */}
                                                     <Link to="/question/new">
-                                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                                            Ask The Community
-                                                        </button>
+                                                        <ButtonDefinations.EngageButton>
+                                                            Engage with Community
+                                                        </ButtonDefinations.EngageButton>
                                                     </Link>
                                                 </div>
                                             </React.Fragment>
