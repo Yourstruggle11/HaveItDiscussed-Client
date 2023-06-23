@@ -1,17 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
-import logo from '../../assets/logo.png'
 import BellIcon from '../../components/CustomIcon/BellIcon'
 import { NotificationPopover } from './components/NotificationPopover'
 import { useDispatch, useSelector } from 'react-redux'
-import { getLastTenUnreadNotification } from '../../redux/actions/notificationsAction'
+import { getLastTenUnreadNotification, markNotificationAsRead } from '../../redux/actions/notificationsAction'
 
 const NotificationBell = () => {
     const { data } = useSelector((state) => state.getLastTenUnreadNotification)
     const dispatch = useDispatch()
 
 
-    const markAsRead = (id) => {
-
+    const markAsRead = (markAll,notificationId) => {
+      dispatch(markNotificationAsRead(markAll,notificationId))
     }
 
     const [isOpen, setIsOpen] = useState(false)
