@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import logo from '../../assets/logo.png'
+import React, { useEffect } from 'react'
 import EmptyNotigication from './components/EmptyNotification'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllNotifications } from '../../redux/actions/notificationsAction'
@@ -13,6 +12,7 @@ export default function Notification() {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getAllNotifications())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <section className="bg-notificationBackground dark:bg-notificationBackgroundDark relative py-16 bg-cover bg-no-repeat bg-center min-h-screen">
@@ -42,7 +42,9 @@ export default function Notification() {
                                                 {notification?.message}
                                             </p>
                                             <p className="text-xs text-gray-400">
-                                                {convertTime(notification?.createdAt)}
+                                                {convertTime(
+                                                    notification?.createdAt
+                                                )}
                                             </p>
                                         </div>
                                         <Actions
