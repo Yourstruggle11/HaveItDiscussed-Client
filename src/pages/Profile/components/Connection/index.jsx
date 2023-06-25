@@ -5,6 +5,7 @@ import { FriendRequestActions } from './components/FriendRequestActions'
 import { addFriend as sendFriendRequest } from '../../../../redux/actions/friendsAction'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { ButtonDefinations } from '../../../../components/ButtonDefinations'
 
 function Connection({ isFriend, isPending, isFriendRequestReceived, recipientId }) {
     const { userName, userNo } = useParams()
@@ -15,17 +16,15 @@ function Connection({ isFriend, isPending, isFriendRequestReceived, recipientId 
                 {isFriend && <FriendActions />}
                 {!isFriend && isPending && <PendingActions />}
                 {!isFriend && !isPending && !isFriendRequestReceived && (
-                    <button
+                    <ButtonDefinations.PrimaryButton
                         onClick={() =>
                             dispatch(
                                 sendFriendRequest(recipientId, userName, userNo)
                             )
                         }
-                        className="bg-blue-500 active:bg-blue-600 hover:bg-blue-700 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
-                        type="button"
                     >
                         Connect
-                    </button>
+                    </ButtonDefinations.PrimaryButton>
                 )}
                 {isFriendRequestReceived && <FriendRequestActions />}
             </div>
