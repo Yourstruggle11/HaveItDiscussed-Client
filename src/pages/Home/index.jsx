@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Loader from '../../components/Loader'
 import Pagination from '../../components/Pagination'
 import QuestionCard from '../../components/QuestionCard'
 import { HomeLogic } from './Home.logic'
 import { convertTime } from '../../utils/helper'
 import { NoResultsFound } from './components/NoResultsFound'
+import { ShowMemes } from './components/ShowMemes'
 
 export default function Home() {
     const { pageRerender, data, page, limit, loading } = HomeLogic()
@@ -15,47 +15,50 @@ export default function Home() {
     return (
         <>
             <div className="flex items-center justify-center min-h-screen bg-notificationBackground dark:bg-notificationBackgroundDark bg-cover bg-no-repeat bg-center min-h-screent">
-                {/* <div className="overflow-hidden pt-10"> */}
-                    <div className="max-w-sm w-full pt-10 md:pt-0 lg:max-w-full lg:flex min-h-screen items-center flex-col justify-around">
-                        {data && data.questions.length > 0 ? (
-                            data.questions.map((item, index) => {
-                                return (
-                                    <Link
-                                        to={`/question/${item.questionSlug}`}
-                                        key={index}
-                                    >
-                                        <QuestionCard
-                                            Likes={item.likeCount}
-                                            TagArray={item.keywords}
-                                            Question={item.questionTitle}
-                                            Desc="Lorem ipsum dolor sit amet, consectetur adipisicing ad ads ds fsd fd gdf gdf s sc sz  z x"
-                                            PostedBy={
-                                                item.postedBy && item.postedBy.name
-                                            }
-                                            authorImage={
-                                                item.postedBy &&
-                                                item.postedBy.profilePic
-                                            }
-                                            Date={convertTime(item.createdAt)}
-                                        />
-                                    </Link>
-                                )
-                            })
-                        ) : (
-                            <NoResultsFound />
-                        )}
+                <div className=" max-w-sm w-full pt-10 md:pt-0 lg:max-w-full lg:flex min-h-screen items-center flex-col justify-around">
+                    <div className="w-full h-full  flex items-start justify-between">
+                        <div className="w-full md:w-3/5 h-full">
+                            {data && data.questions.length > 0 ? (
+                                data.questions.map((item, index) => {
+                                    return (
+                                        <div key={item._id}>
+                                            <QuestionCard
+                                                Likes={item.likeCount}
+                                                TagArray={item.keywords}
+                                                Question={item.questionTitle}
+                                                Slug={item?.questionSlug}
+                                                PostedBy={
+                                                    item.postedBy &&
+                                                    item.postedBy.name
+                                                }
+                                                authorImage={
+                                                    item.postedBy &&
+                                                    item.postedBy.profilePic
+                                                }
+                                                Date={convertTime(item.createdAt)}
+                                            />
+                                        </div>
+                                    )
+                                })
+                            ) : (
+                                <NoResultsFound />
+                            )}
+                        </div>
+                        <div className="hidden md:w-2/5 mt-4 px-8 h-full  flex-wrap md:flex items-start justfy-between">
+                            <ShowMemes />
+                        </div>
+                    </div>
 
-                        {data && data.questions.length > 0 ? (
-                            <Pagination
-                                totalBlogs={data && data.totalQuestions}
-                                onPageClick={pageRerender}
-                                currentPage={page}
-                                limit={limit}
-                            />
-                        ) : (
-                            ''
-                        )}
-                    {/* </div> */}
+                    {data && data.questions.length > 0 ? (
+                        <Pagination
+                            totalBlogs={data && data.totalQuestions}
+                            onPageClick={pageRerender}
+                            currentPage={page}
+                            limit={limit}
+                        />
+                    ) : (
+                        ''
+                    )}
                 </div>
             </div>
         </>
