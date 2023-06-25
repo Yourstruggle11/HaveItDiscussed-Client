@@ -59,14 +59,14 @@ const QuestionCard = ({
                     Read more ⟶
                 </Link>
                 <div className="flex items-center">
+                    <div className="font-bold text-gray-700 cursor-pointer dark:text-gray-200">
+                        {PostedBy}
+                    </div>
                     <img
                         src={authorImage}
-                        alt="Author Photo"
+                        alt="Author face"
                         className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
                     />
-                    <a className="font-bold text-gray-700 cursor-pointer dark:text-gray-200">
-                        {PostedBy}
-                    </a>
                 </div>
             </div>
         </div>

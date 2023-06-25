@@ -6,5 +6,5 @@ export const convertTime = (time) => {
     const hours = date.getHours()
     const minutes = date.getMinutes()
     const amOrPm = hours >= 12 ? 'PM' : 'AM'
-    return `${month} ${day}, ${year} at ${hours}:${minutes}` + ' ' + amOrPm
+    return `${month} ${day}, ${year} at ${hours}:${minutes} ${amOrPm}`
 }

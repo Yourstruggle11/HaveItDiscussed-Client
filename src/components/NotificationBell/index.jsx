@@ -29,6 +29,7 @@ const NotificationBell = () => {
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
