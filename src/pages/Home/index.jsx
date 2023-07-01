@@ -15,9 +15,9 @@ export default function Home() {
     return (
         <>
             <div className="flex items-center justify-center min-h-screen bg-notificationBackground dark:bg-notificationBackgroundDark bg-cover bg-no-repeat bg-center min-h-screent">
-                <div className=" max-w-sm w-full pt-10 md:pt-0 lg:max-w-full lg:flex min-h-screen items-center flex-col justify-around">
-                    <div className="w-full h-full  flex items-start justify-between">
-                        <div className="w-full md:w-3/5 h-full">
+                <div className="w-full pt-10 md:pt-0 lg:max-w-full lg:flex min-h-screen items-center flex-col justify-around">
+                    <div className="w-full h-full  flex items-start lg:justify-between justify-center">
+                        <div className="w-full sm:w-3/5 md:w-3/5 h-full">
                             {data && data.questions.length > 0 ? (
                                 data.questions.map((item, index) => {
                                     return (
@@ -44,7 +44,7 @@ export default function Home() {
                                 <NoResultsFound />
                             )}
                         </div>
-                        <div className="hidden md:w-2/5 mt-4 px-8 h-full  flex-wrap md:flex items-start justfy-between">
+                        <div className="lg:w-2/5 hidden mt-4 px-8 h-full  flex-wrap lg:flex items-start justfy-between">
                             <ShowMemes />
                         </div>
                     </div>
