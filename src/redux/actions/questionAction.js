@@ -11,7 +11,10 @@ import {
     LIKE_DISLIKE_QUESTION_FAILED,
     CREATE_QUESTION_REQUEST,
     CREATE_QUESTION_SUCCESS,
-    CREATE_QUESTION_FAILED
+    CREATE_QUESTION_FAILED,
+    GET_TOP_AND_RECENT_REQUEST,
+    GET_TOP_AND_RECENT_SUCCESS,
+    GET_TOP_AND_RECENT_FAILED
 } from '../constants/questionConstants'
 import { ConfigFunction } from '../../utils/config'
 
@@ -153,3 +156,33 @@ export const createNewQuestion =
             })
         }
     }
+
+// Get top and recent questions
+export const getTopAndRecentQuestions = () => async (dispatch) => {
+    try {
+        dispatch({
+            type: GET_TOP_AND_RECENT_REQUEST
+        })
+
+        const config = {
+            'Content-Type': 'application/json'
+        }
+
+        const { data } = await axios.get(
+            `${API}/public/discussion/questions/top-recent`,
+            config
+        )
+        dispatch({
+            type: GET_TOP_AND_RECENT_SUCCESS,
+            payload: data
+        })
+    } catch (error) {
+        dispatch({
+            type: GET_TOP_AND_RECENT_FAILED,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message
+        })
+    }
+}
