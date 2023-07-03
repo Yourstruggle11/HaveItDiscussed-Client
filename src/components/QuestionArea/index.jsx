@@ -43,7 +43,7 @@ export default function QuestionArea({
                         <img
                             className="w-10 h-10 rounded-full mr-5"
                             src={authorImg}
-                            alt="Author Picture"
+                            alt="Author"
                         />
                     </Link>
                     <h1 className="mr-5">{PostedBy}</h1>

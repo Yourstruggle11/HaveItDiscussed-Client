@@ -40,13 +40,13 @@ export default function Question() {
                                 key={comment._id}
                                 Comment={comment.comment}
                                 Likes={comment.likeCount}
-                                PostedBy={comment.commentedBy.name}
+                                PostedBy={comment?.commentedBy?.name}
                                 Date={convertTime(comment.createdAt)}
-                                authorImg={comment.commentedBy.profilePic}
+                                authorImg={comment.commentedBy?.profilePic}
                                 liked={comment.likedBy}
                                 commentId={comment._id}
-                                userName={comment.commentedBy.userName}
-                                userNo={comment.commentedBy.userNo}
+                                userName={comment.commentedBy?.userName}
+                                userNo={comment.commentedBy?.userNo}
                             />
                         )
                     })}

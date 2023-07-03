@@ -2,6 +2,7 @@ import React from 'react'
 import InnerHTML from 'dangerously-set-html-content'
 import { CommentCardLogic } from './CommentCard.logic'
 import { useNavigate } from 'react-router-dom'
+import logo from '../../assets/logo.png'
 export default function CommentCard({
     Question,
     Comment,
@@ -27,7 +28,7 @@ export default function CommentCard({
                     <div className="relative flex gap-4">
                         <img
                             onClick={handleRedirect}
-                            src={authorImg}
+                            src={authorImg || logo}
                             className="cursor-pointer relative rounded-lg -top-8 -mb-4 bg-white border h-20 w-20"
                             alt=""
                             loading="lazy"
@@ -37,9 +38,6 @@ export default function CommentCard({
                                 <p className="relative text-xl whitespace-nowrap truncate overflow-hidden">
                                     {PostedBy}
                                 </p>
-                                <a className="text-gray-500 text-xl" href="#">
-                                    <i className="fa-solid fa-trash"></i>
-                                </a>
                             </div>
                             <p className="text-gray-400 text-sm">{Date}</p>
                         </div>

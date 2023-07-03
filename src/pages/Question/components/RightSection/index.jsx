@@ -1,67 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { convertTime } from '../../../../utils/helper'
+import { useDispatch, useSelector } from 'react-redux'
+import { getTopAndRecentQuestions } from '../../../../redux/actions/questionAction'
+import { Link } from 'react-router-dom'
 
 export const RightSection = () => {
-    // Mock data for recent discussions
-    const profilePicUrl = 'https://haveitdiscussed.netlify.app/favicon.png'
+    const dispatch = useDispatch()
+    const { recentDiscussions, topDiscussions } = useSelector(
+        (state) => state.getTopAndRecentQuestions
+    )
 
-    const recentDiscussions = [
-        {
-            id: 1,
-            title: 'Recent Discussion 1',
-            author: 'John Doe',
-            profilePic: profilePicUrl,
-            comments: 5,
-            date: '2023-06-28 09:30'
-        },
-        {
-            id: 2,
-            title: 'Recent Discussion 2',
-            author: 'Jane Smith',
-            profilePic: profilePicUrl,
-            comments: 3,
-            date: '2023-06-29 14:45'
-        },
-        {
-            id: 3,
-            title: 'Recent Discussion 3',
-            author: 'Bob Johnson',
-            profilePic: profilePicUrl,
-            comments: 1,
-            date: '2023-06-30 17:15'
-        }
-    ]
+    useEffect(() => {
+        dispatch(getTopAndRecentQuestions())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch])
 
-    // Mock data for top discussions
-    const topDiscussions = [
-        {
-            id: 1,
-            title: 'Top Discussion 1',
-            author: 'Alice Brown',
-            profilePic: profilePicUrl,
-            comments: 10,
-            date: '2023-06-27 11:20'
-        },
-        {
-            id: 2,
-            title: 'Top Discussion 2',
-            author: 'Charlie Davis',
-            profilePic: profilePicUrl,
-            comments: 8,
-            date: '2023-06-29 09:10'
-        },
-        {
-            id: 3,
-            title: 'Top Discussion 3',
-            author: 'Eve Wilson',
-            profilePic: profilePicUrl,
-            comments: 6,
-            date: '2023-06-30 16:40'
-        }
-    ]
     return (
         <div className="w-1/3 p-8 hidden lg:block">
-
             {/* //TODO: Might need to use the below search bar in the future I know it might go against YAGNI but I think it would be a good idea to have it in the future */}
             {/* Search bar */}
             {/* <input
@@ -76,25 +31,27 @@ export const RightSection = () => {
                     Recent Discussions
                 </h3>
                 <div>
-                    {recentDiscussions.map((discussion) => (
-                        <div key={discussion.id} className="mb-4">
+                    {recentDiscussions?.map((discussion) => (
+                        <div key={discussion._id} className="mb-4">
                             <div className="flex items-center">
                                 <img
-                                    src={discussion.profilePic}
-                                    alt={discussion.author}
+                                    src={discussion?.postedBy?.profilePic}
+                                    alt={discussion?.postedBy?.name}
                                     className="w-8 h-8 rounded-full mr-3"
                                 />
                                 <p className="text-gray-500 text-sm font-semibold">
-                                    {discussion.author}
+                                    {discussion?.postedBy?.name}
                                 </p>
                             </div>
-                            <p className="text-blue-500 hover:underline cursor-pointer">
-                                {discussion.title}
-                            </p>
+                            <Link to={`/question/${discussion?.questionSlug}`}>
+                                <p className="text-blue-500 hover:underline cursor-pointer">
+                                    {discussion?.questionTitle}
+                                </p>
+                            </Link>
                             <p className="text-gray-500 text-sm">
-                                {convertTime(discussion.date)} |{' '}
-                                {discussion.comments} Comment
-                                {discussion.comments !== 1 && 's'}
+                                {convertTime(discussion.createdAt)} |{' '}
+                                {discussion?.commentCount} Comment
+                                {discussion?.commentCount > 1 && 's'}
                             </p>
                         </div>
                     ))}
@@ -107,25 +64,27 @@ export const RightSection = () => {
                     Top Discussions
                 </h3>
                 <div>
-                    {topDiscussions.map((discussion) => (
-                        <div key={discussion.id} className="mb-4">
+                    {topDiscussions?.map((discussion) => (
+                        <div key={discussion._id} className="mb-4">
                             <div className="flex items-center">
                                 <img
-                                    src={discussion.profilePic}
-                                    alt={discussion.author}
+                                    src={discussion?.postedBy?.profilePic}
+                                    alt={discussion?.postedBy?.name}
                                     className="w-8 h-8 rounded-full mr-3"
                                 />
                                 <p className="text-gray-500 text-sm font-semibold">
-                                    {discussion.author}
+                                    {discussion?.postedBy?.name}
                                 </p>
                             </div>
-                            <p className="text-blue-500 hover:underline cursor-pointer">
-                                {discussion.title}
-                            </p>
+                            <Link to={`/question/${discussion?.questionSlug}`}>
+                                <p className="text-blue-500 hover:underline cursor-pointer">
+                                    {discussion?.questionTitle}
+                                </p>
+                            </Link>
                             <p className="text-gray-500 text-sm">
-                                {convertTime(discussion.date)} |{' '}
-                                {discussion.comments} Comment
-                                {discussion.comments !== 1 && 's'}
+                                {convertTime(discussion.createdAt)} |{' '}
+                                {discussion?.commentCount} Comment
+                                {discussion?.commentCount > 1 && 's'}
                             </p>
                         </div>
                     ))}
