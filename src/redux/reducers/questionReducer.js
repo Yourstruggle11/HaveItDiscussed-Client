@@ -10,7 +10,10 @@ import {
     LIKE_DISLIKE_QUESTION_FAILED,
     CREATE_QUESTION_REQUEST,
     CREATE_QUESTION_SUCCESS,
-    CREATE_QUESTION_FAILED
+    CREATE_QUESTION_FAILED,
+    GET_TOP_AND_RECENT_REQUEST,
+    GET_TOP_AND_RECENT_SUCCESS,
+    GET_TOP_AND_RECENT_FAILED
 } from '../constants/questionConstants'
 
 ///    GET ALL QUESTIONS    ///
@@ -145,6 +148,44 @@ export const createNewQuestionReducer = (
                 ...state,
                 loading: false,
                 data: null,
+                error: action.payload
+            }
+        default:
+            return state
+    }
+}
+
+///    GET TOP AND RECENT QUESTIONS    ///
+export const getTopAndRecentQuestionsReducer = (
+    state = {
+        loading: false,
+        recentDiscussions: null,
+        topDiscussions: null,
+        isAuthenticated: false,
+        error: null
+    },
+    action
+) => {
+    switch (action.type) {
+        case GET_TOP_AND_RECENT_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+        case GET_TOP_AND_RECENT_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                isAuthenticated: true,
+                recentDiscussions: action.payload?.recentQuestions,
+                topDiscussions: action.payload?.topQuestions
+            }
+        case GET_TOP_AND_RECENT_FAILED:
+            return {
+                ...state,
+                loading: false,
+                recentDiscussions: null,
+                topDiscussions: null,
                 error: action.payload
             }
         default:

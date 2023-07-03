@@ -9,6 +9,7 @@ import {
     createNewQuestionReducer,
     getAllQuestionsReducer,
     getSingleQuestionsReducer,
+    getTopAndRecentQuestionsReducer,
     likeDislikeQuestionReducer
 } from './questionReducer'
 import { userSigninReducer } from './userReducer'
@@ -22,7 +23,11 @@ import {
     cancelFriendRequestReducer,
     removeFriendReducer
 } from './friendsReducer'
-import { getAllNotificationsReducer, getLastTenUnreadNotificationReducer, markNotificationAsReadReducer } from './notificationsReducer'
+import {
+    getAllNotificationsReducer,
+    getLastTenUnreadNotificationReducer,
+    markNotificationAsReadReducer
+} from './notificationsReducer'
 
 const rootReducer = combineReducers({
     userSignin: userSigninReducer,
@@ -42,7 +47,8 @@ const rootReducer = combineReducers({
     removeFriend: removeFriendReducer,
     getAllNotifications: getAllNotificationsReducer,
     getLastTenUnreadNotification: getLastTenUnreadNotificationReducer,
-    markNotificationAsRead: markNotificationAsReadReducer
+    markNotificationAsRead: markNotificationAsReadReducer,
+    getTopAndRecentQuestions: getTopAndRecentQuestionsReducer
 })
 
 export default rootReducer
