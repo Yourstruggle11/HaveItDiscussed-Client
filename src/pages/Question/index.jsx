@@ -3,45 +3,41 @@ import CommentCard from '../../components/CommentCard/index.jsx'
 import Editor from '../../components/Editor.js'
 import QuestionArea from '../../components/QuestionArea/index.jsx'
 import { QuestionLogic } from './Question.logic'
-import { ButtonDefinations } from '../../components/ButtonDefinations/index.jsx'
 import { convertTime } from '../../utils/helper.js'
+import { CommentArea } from './components/CommentArea/index.jsx'
+import { RightSection } from './components/RightSection/index.jsx'
 
 export default function Question() {
     const { body, setBody, data, allCommentsData, postComment } = QuestionLogic()
     return (
-        <>
-            <div className="w-full min-h-[50rem] py-10 bg-[#f9fafb] dark:bg-MB pt-[2rem]">
-                <QuestionArea
-                    Question={data && data.question.questionTitle}
-                    Likes={data && data.question.likeCount}
-                    PostedBy={data && data.question.postedBy.name}
-                    Date={convertTime(data && data.question.createdAt)}
-                    Desc={data && data.question.questionBody}
-                    isComment={false}
-                    authorImg={data && data.question.postedBy.profilePic}
-                    liked={data && data.isLiked}
-                    userName={data && data.question.postedBy.userName}
-                    userNo={data && data.question.postedBy.userNo}
-                />
-                <Editor
-                    isComment={true}
-                    body={body}
-                    setBody={setBody}
-                    placeholder="Write Your Comment Here..."
-                />
-                <div className="w-4/5 h-5 m-auto my-10">
-                    <span
-                        onClick={postComment}
-                    >
-                        
-                        <ButtonDefinations.SubmitButton >Post Comment</ButtonDefinations.SubmitButton>
-                    </span>
-                </div>
-                {allCommentsData &&
-                    allCommentsData.body.map((comment, index) => {
+        <div className="w-full py-10 bg-notificationBackground dark:bg-notificationBackgroundDark bg-cover bg-no-repeat bg-center min-h-screen pt-[2rem]">
+            <div className="flex">
+                <div className="w-full lg:w-2/3 lg:p-8 h-full">
+                    <QuestionArea
+                        Question={data?.question.questionTitle}
+                        Likes={data?.question.likeCount}
+                        PostedBy={data?.question.postedBy.name}
+                        Date={convertTime(data?.question.createdAt)}
+                        Desc={data?.question.questionBody}
+                        isComment={false}
+                        authorImg={data?.question.postedBy.profilePic}
+                        liked={data?.isLiked}
+                        userName={data?.question.postedBy.userName}
+                        userNo={data?.question.postedBy.userNo}
+                    />
+                    {/* HOC component for comment area */}
+                    <CommentArea postComment={postComment}>
+                        <Editor
+                            isComment={true}
+                            body={body}
+                            setBody={setBody}
+                            placeholder="Write Your Comment Here..."
+                        />
+                    </CommentArea>
+                    {allCommentsData?.body?.map((comment) => {
                         return (
                             <CommentCard
-                                key={index}
+                                key={comment._id}
                                 Comment={comment.comment}
                                 Likes={comment.likeCount}
                                 PostedBy={comment.commentedBy.name}
@@ -54,7 +50,10 @@ export default function Question() {
                             />
                         )
                     })}
+                </div>
+
+                <RightSection />
             </div>
-        </>
+        </div>
     )
 }
