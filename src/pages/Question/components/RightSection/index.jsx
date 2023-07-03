@@ -3,6 +3,7 @@ import { convertTime } from '../../../../utils/helper'
 import { useDispatch, useSelector } from 'react-redux'
 import { getTopAndRecentQuestions } from '../../../../redux/actions/questionAction'
 import { Link } from 'react-router-dom'
+import { Skeleton } from './components/Skeleton'
 
 export const RightSection = () => {
     const dispatch = useDispatch()
@@ -14,6 +15,10 @@ export const RightSection = () => {
         dispatch(getTopAndRecentQuestions())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch])
+
+    if (!recentDiscussions || !topDiscussions) {
+        return <Skeleton />
+    }
 
     return (
         <div className="w-1/3 p-8 hidden lg:block">

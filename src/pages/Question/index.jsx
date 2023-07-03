@@ -6,6 +6,7 @@ import { QuestionLogic } from './Question.logic'
 import { convertTime } from '../../utils/helper.js'
 import { CommentArea } from './components/CommentArea/index.jsx'
 import { RightSection } from './components/RightSection/index.jsx'
+import { CommentSkeleton } from '../../components/CommentCard/components/CommentSkeleton/index.jsx'
 
 export default function Question() {
     const { body, setBody, data, allCommentsData, postComment } = QuestionLogic()
@@ -34,6 +35,7 @@ export default function Question() {
                             placeholder="Write Your Comment Here..."
                         />
                     </CommentArea>
+                    {!data && <CommentSkeleton />}
                     {allCommentsData?.body?.map((comment) => {
                         return (
                             <CommentCard

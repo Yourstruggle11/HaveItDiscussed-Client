@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { QuestionAreaLogic } from './QuestionArea.logic'
 import InnerHTML from 'dangerously-set-html-content'
+import { Skeleton } from './components/Skeleton'
 
 export default function QuestionArea({
     Question,
@@ -17,6 +18,11 @@ export default function QuestionArea({
     userNo
 }) {
     const { likeDislikeToggle, userInfo } = QuestionAreaLogic()
+
+
+    if(!Question){
+        return <Skeleton />
+    }
 
     return (
         <div
