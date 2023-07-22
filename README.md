@@ -24,6 +24,38 @@
 <br />
 <br />
 
+# Preview
+
+# [SITE IS LIVE HERE](https://haveitdiscussed.netlify.app/ "HaveItdiscussed") 
+
+
+
+<img src="./src/assets/DEMO/demo (1).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (2).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (3).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (4).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (5).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (6).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (7).jpeg">
+<br />
+<br />
+<img src="./src/assets/DEMO/demo (8).jpeg">
+<br />
+<br />
+
+
 # Feature Section
 ## Welcome to the feature section of this application! Here, I'll walk you through the exciting features that this platform offers, designed to enhance your user experience and foster engaging interactions within the community.
 
@@ -58,37 +90,6 @@
 ## Access the application seamlessly from your mobile devices. This platform is fully optimized for mobile responsiveness, allowing you to engage with the community on the go.
 
 ## We hope you find these features enriching and enjoyable as you become an active member of our thriving community. Should you have any questions or need assistance, feel free contact me. Happy interacting!
-
-# Preview
-
-# [SITE IS LIVE HERE](https://haveitdiscussed.netlify.app/ "HaveItdiscussed") 
-
-
-
-<img src="./src/assets/DEMO/demo (1).jpeg">
-<br />
-<br />
-<img src="./src/assets/DEMO/demo (2).jpeg">
-<br />
-<br />
-<img src="./src/assets/DEMO/demo (3).jpeg">
-<br />
-<br />
-<img src="./src/assets/DEMO/demo (4).jpeg">
-<br />
-<br />
-<img src="./src/assets/DEMO/demo (5).jpeg">
-<br />
-<br />
-<img src="./src/assets/DEMO/demo (6).jpeg">
-<br />
-<br />
-<img src="./src/assets/DEMO/demo (7).jpeg">
-<br />
-<br />
-<img src="./src/assets/DEMO/demo (8).jpeg">
-<br />
-<br />
 
 # Installation Guide
 
