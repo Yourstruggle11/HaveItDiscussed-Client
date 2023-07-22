@@ -26,7 +26,7 @@ export default function PostQuestion() {
     }
     return (
         <>
-            <div className="w-full min-h-[50rem] py-10 bg-[#f9fafb] pt-[2rem] dark:bg-MB">
+            <div className="w-full min-h-[50rem] py-10 bg-notificationBackground dark:bg-notificationBackgroundDark bg-cover bg-no-repeat bg-center">
                 <div className="w-11/12 bg-white min-h-[15rem] mx-auto p-5 shadow-lg rounded-lg mb-10 dark:bg-black">
                     <div className="flex justify-center">
                         <div className="mb-3 w-full">
@@ -43,13 +43,14 @@ export default function PostQuestion() {
                             text-base
                             font-normal
                             text-gray-700
+                            dark:text-white
                             bg-white bg-clip-padding
                             border border-solid border-gray-300
                             rounded
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 dark:focus:text-white focus:bg-white focus:border-blue-600 focus:outline-none
                         "
                                 id="exampleFormControlInput1"
                                 value={title}
@@ -67,13 +68,6 @@ export default function PostQuestion() {
                             setBody={setBody}
                             placeholder="Write Your Comment Here..."
                         />
-                        {/* <ReactQuill
-                            style={{ boxShadow: 'none' }}
-                            theme="snow"
-                            value={body}
-                            onChange={(e) => setBody(e)}
-                            placeholder="Lets write and start the discussion.."
-                        /> */}
                     </div>
 
                     <div className="flex justify-center mt-10">
@@ -83,8 +77,8 @@ export default function PostQuestion() {
                                 onChange={(e) => setKeywordInput(e.target.value)}
                                 value={keywordInput}
                                 className="
-                dark:bg-[#1e1e1e]
-                dark:placeholder:text-white
+                          dark:bg-[#1e1e1e]
+                          dark:placeholder:text-white
                             form-control
                             block
                             w-full
@@ -93,13 +87,14 @@ export default function PostQuestion() {
                             text-base
                             font-normal
                             text-gray-700
+                            dark:text-white
                             bg-white bg-clip-padding
                             border border-solid border-gray-300
                             rounded
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 dark:focus:text-white focus:bg-white focus:border-blue-600 focus:outline-none
                         "
                                 id="exampleFormControlInput1"
                                 placeholder="Add some related keywords..."
@@ -119,7 +114,7 @@ export default function PostQuestion() {
                                 <span
                                     onClick={() => removeTag(keyword)}
                                     key={index}
-                                    className="text-xs cursor-pointer font-semibold inline-block py-1 px-2 uppercase rounded-full text-slate-600 bg-slate-200 uppercase last:mr-0 mr-1"
+                                    className="text-xs cursor-pointer font-semibold inline-block py-1 px-2 uppercase rounded-full text-slate-600 bg-slate-200 last:mr-0 mr-1"
                                 >
                                     {keyword}
                                 </span>
