@@ -4,7 +4,7 @@
 
 <hr>
 
-![Netlify](https://img.shields.io/netlify/e522e744-1326-428e-aabc-19ad374c19c6)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e522e744-1326-428e-aabc-19ad374c19c6/deploy-status)](https://app.netlify.com/sites/haveitdiscussed/deploys)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Yourstruggle11/HaveItDiscussed-Client)
 ![GitHub top language](https://img.shields.io/github/languages/top/Yourstruggle11/HaveItDiscussed-Client)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Yourstruggle11/HaveItDiscussed-Client)
