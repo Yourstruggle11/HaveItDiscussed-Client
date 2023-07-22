@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@1&display=swap');
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -21,9 +21,41 @@ ul, ol{
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-family: 'Source Code Pro', monospace;
+    background-color: #1e1e1e;
+    color: #eaeaea;
+    padding: 4px;
+    border: 1px solid #333;
+    border-radius: 4px;
 }
 
 pre {
+    font-family: 'Source Code Pro', monospace;
     white-space: pre-wrap;
+    background-color: #1e1e1e;
+    color: #eaeaea;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+.dark code {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dark pre {
+    font-family: 'Source Code Pro', monospace;
+    white-space: pre-wrap;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow-x: auto;
 }
