@@ -1,5 +1,3 @@
-{
-  "build": {
-    "ignore": ["src/assets/v1.DEMO/", "src/assets/DEMO/"]
-  }
-}
+[build]
+  # List of files/directories to ignore during the build process
+  ignore = "'src/assets/v1.DEMO/', 'src/assets/DEMO/'"
