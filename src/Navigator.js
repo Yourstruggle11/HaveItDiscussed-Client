@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import { UserProtection } from './Layout/RouteProtection'
 import Profile from './pages/Profile'
 import Notification from './pages/Notification'
+import AboutUs from './pages/AboutUs'
 
 export default function Navigator() {
     return (
@@ -47,6 +48,7 @@ export default function Navigator() {
                         }
                     />
                     <Route path="/users/:userNo/:userName" element={<Profile />} />
+                    <Route path="/about-us" element={<AboutUs />} />
                 </Routes>
             </BrowserRouter>
         </>
