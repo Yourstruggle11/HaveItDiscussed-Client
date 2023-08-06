@@ -10,6 +10,7 @@ import { UserProtection } from './Layout/RouteProtection'
 import Profile from './pages/Profile'
 import Notification from './pages/Notification'
 import AboutUs from './pages/AboutUs'
+import { Chats } from './pages/Chats'
 
 export default function Navigator() {
     return (
@@ -44,6 +45,14 @@ export default function Navigator() {
                         element={
                             <UserProtection>
                                 <Notification />
+                            </UserProtection>
+                        }
+                    />
+                    <Route
+                        path="/chats"
+                        element={
+                            <UserProtection>
+                                <Chats />
                             </UserProtection>
                         }
                     />

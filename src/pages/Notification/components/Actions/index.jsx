@@ -29,6 +29,5 @@ export default function Actions({ type, actionURL }) {
 
                 <ButtonDefinations.ActionButton>{generateActionText(type)}</ButtonDefinations.ActionButton>
         </Link>
-        // </Link>
     )
 }

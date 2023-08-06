@@ -59,3 +59,14 @@ pre {
     border-radius: 6px;
     overflow-x: auto;
 }
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+  
+  /* Hide scrollbar thumb (draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
